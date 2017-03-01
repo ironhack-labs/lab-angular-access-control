@@ -1,0 +1,25 @@
+<p>
+  log-form works!
+</p>
+
+<form (ngSubmit)="createRegister(ngForm)" #ngForm="ngForm" novalidate>
+      <p> Name
+        <input type="text" name="Name" [(ngModel)]="name" required
+        #myName="ngModel" minlength="3" />
+      </p>
+      <div *ngIf="myName.errors && (myName.dirty || myName.touched)">
+            <p class="error" [hidden]="!myName.errors.minlength">
+              Name must be at least 3 characters long.
+            </p>
+      </div>
+      <p> Message
+        <input type="text" name="Message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+      </p>
+      <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+        <p class="error" [hidden]="!myMessage.errors.required">
+          Message is required
+        </p>
+      </div>
+      <button type="submit"> signup </button>
+</form>
