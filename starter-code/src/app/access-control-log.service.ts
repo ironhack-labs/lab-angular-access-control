@@ -5,11 +5,10 @@ export class AccessControlLogService {
 
   constructor() { }
 
-  logMessages: Array<logMsg>= [ ];
+  logMessages: Array<logMsg > = [ ];
 
-    addRegister(person: String, message: String): void{
+  addRegister(person: String, message: String): void{
     let createdAt = new Date();
-    console.log({person,message,createdAt});
     this.logMessages.push({person,message,createdAt});
   }
 
