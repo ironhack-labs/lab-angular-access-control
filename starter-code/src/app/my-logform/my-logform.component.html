@@ -1,0 +1,18 @@
+<div class="form-group">
+ <label for="person">Person</label>
+ <input type="text" class="form-control" required [(ngModel)]="person" name="person" id="person"
+  #personField="ngModel">
+ <div [hidden]="personField.valid || personField.pristine" >
+   Username is required
+ </div>
+ <label for="message">Message</label>
+ <input type="text" class="form-control" required [(ngModel)]="message" name="message" id="message"
+  #messageField="ngModel">
+ <div [hidden]="messageField.valid || messageField.pristine">
+   Message is required
+ </div>
+ <button (click)="form.hidden = !form.hidden" (click)="addPerson(person,message)" (click)="showList()"> Add </button>
+ <div #form hidden>
+   Succes
+ </div>
+</div>
