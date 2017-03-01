@@ -1,0 +1,20 @@
+<p>
+  log-form-component works!
+</p>
+
+  <form (ngSubmit)="addRegister(ngForm)" #ngForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" required #myUsername="ngModel"/>
+  </p>
+
+  <p> Message
+    <input type="message" name="message" [(ngModel)]="message"
+          #myPassword="ngModel" required />
+  </p>
+  <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+    <p class="error" [hidden]="!myPassword.errors.required">
+      Password is required
+    </p>
+  </div>
+  <button type="submit"> signup </button>
+</form>
