@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LogFormComponent } from './log-form/log-form.component';
+import { RouterModule,Routes } from "@angular/router";
+
+
+
 
 @NgModule({
   declarations: [
