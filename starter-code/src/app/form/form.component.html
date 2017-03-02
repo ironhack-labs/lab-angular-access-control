@@ -1,0 +1,13 @@
+<form (ngSubmit)="addRegister(myForm)" #myForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person"
+          #myPerson="ngModel" minlength="6" />
+  </p>
+
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+  </p>
+
+  <button type="submit" > signup </button>
+</form>
