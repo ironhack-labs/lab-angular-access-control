@@ -1,0 +1,22 @@
+<p>
+  log-form-component works!
+</p>
+
+<p>
+  Name:
+  <input [(ngModel)]="newLogMessage.person" type="text">
+</p>
+<p>
+  Message:
+  <input  [(ngModel)]="newLogMessage.message" type="text">
+</p>
+<button (click)="addAccessItems(newLogMessage)">Create</button>
+
+<!-- <ul>
+  <li *ngFor="let onePerson of myService.logMessages">
+    <span>{{onePerson.person}}</span>
+    <br>
+    <span>{{ onePerson.message }}</span>
+    <span>{{ onePerson.time }}</span>
+  </li>
+</ul> -->
