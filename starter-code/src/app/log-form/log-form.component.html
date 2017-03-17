@@ -1,0 +1,11 @@
+<h2>Log Form page</h2>
+<p *ngIf="success === true">Update Successful</p>
+
+<table>
+  <tr>
+<td><input type="text" [(ngModel)]="newEntry.person" placeholder="Enter Name" required></td>
+<td><input type="text" [(ngModel)]="newEntry.message" placeholder="Enter Message" required></td>
+<td><button (click)="addAccessItems(newEntry)">📟</button></td>
+
+</tr>
+</table>
