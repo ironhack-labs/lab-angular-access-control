@@ -13,7 +13,9 @@ export class AccessControlLogService {
   constructor() { }
 
   getAccessLog() {
-    return this.logMessages;
+    this.logMessages.forEach((message) => {
+      console.log(`${message.person}: "${message.message}"`);
+    });
   }
 
   addAccessItem(person, message) {
@@ -23,6 +25,7 @@ export class AccessControlLogService {
       createdAt: new Date()
     }
     this.logMessages.push(newLogRecord);
+    this.getAccessLog();
   }
 
 }
