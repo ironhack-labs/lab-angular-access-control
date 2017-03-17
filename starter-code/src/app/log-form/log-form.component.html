@@ -1,0 +1,29 @@
+<h2> Enter New Record </h2>
+
+<form #myForm="ngForm" novalidate>
+  <ul>
+    <li>
+      <label for="person"> Person </label>
+      <input #myPerson="ngModel" type="text" [(ngModel)] = "person" name="person" required>
+      <div *ngIf="myPerson.errors && myPerson.dirty">
+        <p class="error" [hidden]="!myPerson.errors.required">
+          Please provide your name
+        </p>
+      </div>
+    </li>
+    <br>
+    <li>
+      <label for="message"> Message </label>
+      <input #myMessage="ngModel" type="text" [(ngModel)] = "message" name="message" required>
+      <div *ngIf="myMessage.errors && myMessage.dirty">
+        <p class="error" [hidden]="!myMessage.errors.required">
+          Please provide your message
+        </p>
+      </div>
+    </li>
+    <br>
+    <li>
+      <button (click)="theLog.addAccessItem(person, message)">Add Record</button>
+    </li>
+  </ul>
+</form>
