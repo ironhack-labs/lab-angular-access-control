@@ -1,0 +1,22 @@
+<h2> Fill out this form: </h2>
+
+<form>
+  <label for="">Your name: </label>
+  <input [(ngModel)]="name" type="text" name="name" value="" placeholder="name">
+  <label for="">Message: </label>
+  <input [(ngModel)]="message" type="text" name="message" value="" placeholder="message">
+
+  <button (click)="addNewPerson(name, message)" type="button" name="button">Add New Person</button>
+</form>
+
+<br><hr><br><br><br>
+
+<div class="listOfContacts">
+  <ul *ngFor="let onePerson of this.theAccessService.log">
+    <li>
+      <p> {{ onePerson.person }} </p>
+      <p> {{ onePerson.message }} </p>
+      <p> {{ onePerson.createdAt }} </p>
+    </li>
+  </ul>
+</div>
