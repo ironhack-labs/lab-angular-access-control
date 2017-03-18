@@ -1,0 +1,18 @@
+<div>
+  <form action="post" >
+    <label for="person"> Your name </label>
+    <input name="person" [(ngModel)]="newItem.person" type="text" placeholder="Your name">
+
+    <label for="message"> Message </label>
+    <input name="message" [(ngModel)]="newItem.message" type="text" placeholder="Message">
+
+    <button (click) = "addThis()">Submit</button>
+  </form>
+</div>
+
+The list
+<ul *ngFor = "let item of theList">
+  <li>
+    <p>{{item.person}}, {{item.message}}</p>
+  </li>
+</ul>
