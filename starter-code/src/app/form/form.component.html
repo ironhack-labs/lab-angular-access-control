@@ -1,0 +1,6 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+    <input [(ngModel)]="person" name="person" type="text" placeholder="Name">
+    <input [(ngModel)]="message" name="message" type="text" placeholder="Your Message">
+  <button type="submit">Send</button>
+</form>
+<p>{{done}}</p>
