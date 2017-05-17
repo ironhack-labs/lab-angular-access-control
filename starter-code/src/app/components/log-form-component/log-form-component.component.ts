@@ -11,12 +11,13 @@ export class LogFormComponentComponent implements OnInit {
 display:Boolean = false;
 person:String = '';
 message:String = '';
+fadeout:Boolean = false;
   constructor(private addPersonLogService: AccessControlLogService ) { }
 
   ngOnInit() {
   }
    submitForm(myForm) {
-    // console.log(myForm.value);
+    console.log(myForm);
     this.addPersonLogService.addAccessItem(myForm.value.person, myForm.value.message);
     this.display = true;
     this.person = '';
