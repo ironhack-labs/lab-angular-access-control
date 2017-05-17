@@ -1,0 +1,28 @@
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+
+ <div class="col-md-6">
+  <div class="form-group">
+    <label >Person</label>
+    <input type="text" name="person" class="form-control" [(ngModel)]="person"
+          #myUsername="ngModel" minlength="6" />
+
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Person must be at least 6 characters long.
+    </p>
+  </div>
+
+  </div>
+
+  <div class="form-group">
+    <label >Message</label>
+    <textarea  type="text" name="message" class="form-control" [(ngModel)]="message"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-default"> Log </button>
+  <p *ngIf="succesMessage === true">registration was successful</p>
+  </div>
+
+</form>
