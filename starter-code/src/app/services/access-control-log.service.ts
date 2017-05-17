@@ -26,7 +26,9 @@ export class AccessControlLogService {
       createdAt: new Date(),
     }
     this.logMessages.push(newLog);
-    console.log(this.logMessages);
-    
+    this.logMessages.forEach(logMessage => {
+      console.log(logMessage['person'], logMessage['message']);
+    });
+
   }
 }
