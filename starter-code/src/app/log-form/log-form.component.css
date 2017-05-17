@@ -1,0 +1,16 @@
+.container{
+
+  height: 50vh;
+  margin: 0 25%;
+  background: #172446;
+  text-align: center;
+  padding-top: 60px;
+  border-radius: 2%;
+}
+
+form{
+
+  margin: 5%;
+  color:white;
+  text-align: center;
+}

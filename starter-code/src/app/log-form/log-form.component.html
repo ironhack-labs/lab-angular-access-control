@@ -1,0 +1,20 @@
+<div class="container">
+
+  <form  #myForm="ngForm">
+    <p> Person
+      <input type="text" name="person" [(ngModel)]="person"  required #myPerson="ngModel"/>
+    </p>
+
+    <p> Message
+      <input type="text" name="message" [(ngModel)]="message" required #myMessage="ngModel"/>
+    </p>
+    <button (ngSubmit)="addLog(person, message)"> signup </button>
+
+    <div *ngIf = "myPerson.touched && myMessage.touched">
+      <p class="error" [hidden]="myPerson.errors" myPerson="" myMessage="">
+        Successfully added!
+      </p>
+    </div>
+
+  </form>
+</div>
