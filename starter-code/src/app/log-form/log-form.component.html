@@ -1,4 +1,4 @@
-<form (ngSubmit)="receiveData(myForm)" #myForm="ngForm" novalidate>
+<form (ngSubmit)="registeringAccess(logForm)" #logForm="ngForm" novalidate>
   <p> person
     <input type="text" name="person" [(ngModel)]="person"
           #myUsername="ngModel" minlength="6" />

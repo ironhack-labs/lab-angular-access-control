@@ -14,9 +14,16 @@ export class LogFormComponent implements OnInit {
 
   ngOnInit() {}
 
-  receiveData(form){
+  registeringAccess(form){
     this.accessControl.addAccessItem(form.value.person, form.value.message)
+    this._showCompleteLogInConsole()
     alert('Log created successfuly')
+  }
+
+  _showCompleteLogInConsole(){
+    return this.accessControl.getAccessLog().map( person => {
+      console.log(person)
+    })
   }
 
 }
