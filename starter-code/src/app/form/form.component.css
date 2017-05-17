@@ -1,0 +1,44 @@
+body {
+  font-family: sans-serif;
+}
+
+form {
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+input {
+  height: 24px;
+  width: 150px;
+  border: 1px solid black;
+  box-shadow: inset 3px 3px 5px darkgray;
+}
+
+button {
+  color: white;
+  background-color: black;
+  width: 100px;
+  height: 24px;
+  font-family: sans-serif;
+  font-size: 16px;
+  border: 2px solid black;
+}
+
+.alert {
+  font-size: 18px;
+  font-family: sans-serif;
+  background-color: lightgreen;
+  color: green;
+  border: 2px solid darkgreen;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+.main {
+  margin: 0 auto;
+}

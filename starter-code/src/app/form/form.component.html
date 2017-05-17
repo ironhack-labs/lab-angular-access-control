@@ -1,0 +1,19 @@
+<div class="container">
+<div class="main">
+
+
+
+<form (ngSubmit)="submitForm(thisForm)" #thisForm="ngForm">
+  <p> Person <br>
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p> Message <br>
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> Access </button>
+</form>
+<div *ngIf="confirm" class="alert">
+  Registration was succesful!
+</div>
+</div>
+</div>
