@@ -11,7 +11,7 @@ export class LogFormComponentComponent implements OnInit {
 
   submitForm(form) {
 
-    if (form.valid) {
+    if (form.valid) {//if statement for avoiding sending empty objects with the form
       this.accessLog.addAccessItem(form.value.person, form.value.message);
     }
 
