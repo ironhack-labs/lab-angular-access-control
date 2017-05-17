@@ -19,6 +19,9 @@ export class LogFormComponentComponent implements OnInit {
     }
     this.controlLog.addAccessItem(person,message);
     this.dismissed = false;
+    setTimeout(()=>{
+      this.dismissed = true;
+    },1000)
 
   }
   showAll(message){
