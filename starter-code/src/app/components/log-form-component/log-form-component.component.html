@@ -1,0 +1,24 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person"
+          #myPerson="ngModel" minlength="2"/>
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Name must be at least 2 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"
+          #myMessage="ngModel" minlength="2" />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.minlength">
+      Message must be at least 2 characters long.
+    </p>
+  </div>
+  <button type="submit" [disabled]="!myForm.form.valid">Create new Log</button>
+  <div *ngIf="display">
+    <p class="success">Successfully saved the log!</p>
+    </div>
+</form>
