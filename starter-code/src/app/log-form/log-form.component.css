@@ -1,0 +1,22 @@
+.message-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.error{
+  color: red;
+}
+
+.ng-touched {
+  border-color: blue;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.ng-touched.ng-valid {
+  border-color: green;
+}
