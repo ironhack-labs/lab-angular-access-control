@@ -1,0 +1,19 @@
+<div class="container">
+  <p>
+    FORMULARIO YEAAAH!
+  </p>
+  <form (ngSubmit)="goToInjectable(myForm)" #myForm="ngForm">
+    <p> Person
+      <input type="text" name="person" [(ngModel)]="person" required />
+    </p>
+    <p> Message
+      <input type="text" name="message" [(ngModel)]="message" required />
+    </p>
+    <button type="submit"> Add new Log   </button>
+  </form>
+
+  <span *ngIf="answer === true" >
+    You added a new PERSON
+  </span>
+
+</div>
