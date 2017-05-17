@@ -1,0 +1,15 @@
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Username
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> signup </button>
+  <div *ngIf="myForm._submitted">
+      <p>
+        Debuti champion
+      </p>
+    </div>
+</form>
