@@ -1,0 +1,21 @@
+<form (ngSubmit)="registeringAccess(logForm)" #logForm="ngForm" novalidate>
+  <p> person
+    <input type="text" name="person" [(ngModel)]="person"
+          #myUsername="ngModel" minlength="6" />
+  </p>
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Name must be at least 6 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="message" name="message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit"> signup </button>
+</form>
