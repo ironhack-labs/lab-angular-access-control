@@ -1,0 +1,25 @@
+<p>
+  log-form-component works!
+</p>
+
+<form (ngSubmit)="myForm.valid && submitForm(myForm)" #myForm="ngForm" novalidate>
+  <p> Name:
+    <input type="text" name="name" [(ngModel)] = "person" #myName="ngModel" required>
+  </p>
+  <div *ngIf="myName.errors && (myName.dirty || myName.touched || myName.pristine)">
+    <p class="error" [hidden]="!myName.errors.required">
+      Name is required
+    </p>
+  </div>
+  <p> Message:
+    <input type="text" name="message" [(ngModel)] = "message" #myMess="ngModel" required>
+  </p>
+  <div *ngIf="myMess.errors && (myMess.dirty || myMess.touched || myName.pristine)">
+    <p class="error" [hidden]="!myMess.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="">
+</div>
