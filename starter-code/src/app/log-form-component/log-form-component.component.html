@@ -1,0 +1,18 @@
+<p>
+  log-form-component works!
+</p>
+
+<form (ngSubmit)="addItem(myForm)" #myForm="ngForm">
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required />
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required />
+  </p>
+  <button (click)='addLog()' type="submit"> Add </button>
+</form>
+
+<div *ngFor='let log of logMessages'>
+  <p>{{log.person}}</p>
+  <p>{{log.message}}</p>
+</div>
