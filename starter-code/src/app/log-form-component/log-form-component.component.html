@@ -1,0 +1,33 @@
+
+  <div class="container">
+
+<form (ngSubmit)="addMessage(person,message)" #myForm="ngForm" novalidate class="form-signin">
+  <h1 class="form-signin-heading text-muted">Sign In</h1>
+  <p> Person
+    <input type="text" class="form-control" name="person" [(ngModel)]="person"
+          #myPerson="ngModel" minlength="3" required />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 3 characters long.
+    </p>
+  </div>
+  <p> Message
+   <input type="text" class="form-control" name="message" [(ngModel)]="message"
+         #myMessage="ngModel" required />
+ </p>
+ <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+   <p class="error" [hidden]="!myMessage.errors.required">
+     Message is required
+   </p>
+ </div>
+
+  <button type="submit" class="btn btn-lg btn-primary btn-block"> signup </button>
+</form>
+ <button (click)="showAll()" class="btn btn-lg btn-primary btn-block fuera"> Show All </button>
+
+ <div *ngIf=!dismissed>
+   <h1 class="form-signin-heading text-muted">User Added</h1>
+   <button (click)="clean()" class="fuera btn btn-lg btn-primary btn-block " > Ok </button>
+ </div>
+</div>
