@@ -1,3 +1,12 @@
-<p>
-  log-form works!
-</p>
+<form [ngClass]="displayText" (ngSubmit)="addAccessItem(person, message)" #myForm="ngForm">
+  <p> Person's Name
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p> Person's Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> Add Person </button>
+  <div *ngIf="myForm.submitted">
+    <p>Successful Registration</p>
+  </div>
+</form>

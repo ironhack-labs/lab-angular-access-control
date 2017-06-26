@@ -13,7 +13,22 @@ export class LogFormComponent implements OnInit {
     private myService: AccessLogService
   ) { }
 
+  accessLog: Object[] = this.myService.accessLog;
+
   ngOnInit() {
+    this.getAccessLog();
+  }
+
+  addAccessItem(person, message) {
+    this.myService.addAccessItem(person, message)
+    this.getAccessLog();
+  }
+
+  getAccessLog() {
+    this.myService.getAccessLog()
+    this.accessLog.forEach((log) => {
+      console.log(log);
+    })
   }
 
 }
