@@ -12,7 +12,7 @@ export class AccessControlLogService {
 
 
 
-  addAccessItem(person:String, message:String) {
+  addAccessItem(person, message) {
      this.logMessages.push({
        person,
        message,
