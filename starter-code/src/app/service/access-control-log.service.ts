@@ -16,7 +16,6 @@ export class AccessControlLogService {
     constructor() { }
 
 
-
     addAccessItem(person, message) {
           this.logMessages.push ( {
             person,
@@ -28,7 +27,5 @@ export class AccessControlLogService {
   getAccessLog() {
     return this.logMessages;
   }
-
-
 
 }

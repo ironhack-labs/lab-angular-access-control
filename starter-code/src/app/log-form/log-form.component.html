@@ -1,0 +1,33 @@
+<h1> Locker room access form </h1>
+
+<form (ngSubmit)="myForm.valid && submitForm(myForm)" #myForm="ngForm" novalidate>
+      <p> Name:
+        <input type="text" name="name" [(ngModel)]="person"
+        #myName="ngModel" minlength="5" required />
+      </p>
+      <div *ngIf="myName.errors && (myName.dirty || myName.touched)">
+        <p class="error" [hidden]="!myName.errors.minlength">
+      Name must be at least 5 characters long
+    </p>
+
+    <p class="error" [hidden]="!myName.errors.required">
+  Name is required
+</p>
+      </div>
+      <p> Messsage:
+        <input type="text" name="message" [(ngModel)]="message"
+        #myMessage="ngModel" minlength="7" required />
+      </p>
+      <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+        <p class="error" [hidden]="!myMessage.errors.minlength">
+          Your message is too short
+        </p>
+
+        <p class="error" [hidden]="!myMessage.errors.required">
+          Please write a message
+        </p>
+      </div>
+
+
+      <button type="submit"> Grant Access </button>
+    </form>
