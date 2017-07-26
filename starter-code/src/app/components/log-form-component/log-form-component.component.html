@@ -1,0 +1,24 @@
+<section class="logForm">
+  <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+    <div class="logInput">
+      <label for="personLog">Name:</label>
+      <input type="text" name="personLog" ngModel #viewPersonLog="ngModel" placeholder="John" required>
+    </div>
+    <div class="logInput">
+      <label for="messageLog">Message:</label>
+      <input type="text" name="messageLog" ngModel #viewMessageLog="ngModel" placeholder="Grab my stuff..." required>
+    </div>
+    <div *ngIf="viewPersonLog.errors && (viewPersonLog.dirty || viewPersonLog.touched)">
+      <p class="error" [hidden]="!viewPersonLog.errors.required">
+        Name is required!
+      </p>
+    </div>
+    <div *ngIf="viewMessageLog.errors && (viewMessageLog.dirty || viewMessageLog.touched)">
+      <p class="error" [hidden]="!viewMessageLog.errors.required">
+        Message is required!
+      </p>
+    </div>
+    <button type="submit">Save Log!</button>
+  </form>
+  <p>{{successMessage}}</p>
+</section>

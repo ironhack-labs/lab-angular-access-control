@@ -7,7 +7,7 @@ export class AccessControlLogService {
     person: string,
     message: string,
     createdAt: Date
-  }>;
+  }> = [];
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class AccessControlLogService {
       person: person,
       message: message,
       createdAt: new Date()
-    }
+    };
     this.logMessages.push(access);
   };
 
