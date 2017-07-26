@@ -4,7 +4,7 @@
 
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
   <p> Person
-    <input type="text" name="person" [(ngModel)]="person"
+    <input type="text" name="person" ngModel
           #myPerson="ngModel" minlength="6" required />
   </p>
   <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
@@ -17,7 +17,7 @@
   </div>
  
   <p> Message
-    <input type="message" name="message" [(ngModel)]="message"
+    <input type="message" name="message" ngModel
           #myMessage="ngModel" required />
   </p>
   <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
