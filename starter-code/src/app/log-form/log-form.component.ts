@@ -15,7 +15,9 @@ export class LogFormComponent implements OnInit {
   }
 
   submitForm(myForm) {
+    console.log(myForm)
     this.log.addAccessItem(myForm.form._value.person, myForm.form._value.messaje)
     this.show = !this.show
+
   }
 }
