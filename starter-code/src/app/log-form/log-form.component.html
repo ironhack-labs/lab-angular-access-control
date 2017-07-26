@@ -1,0 +1,65 @@
+<!-- <form  #addForm="ngForm" novalidate>
+  <p> Name
+    <input type="text" name="person" ngModel
+          #myUsername="ngModel" minlength="6" />
+  </p>
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" ngModel
+          #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit" (click)="addAccessItem(addForm)"> Submit </button>
+</form> -->
+<form #addForm="ngForm" novalidate>
+
+<div class="field">
+  <label class="label">Name</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="text" placeholder="Text input" ngModel #myUsername="ngModel" name="person" minlength="6">
+    <span class="icon is-small is-left">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-check"></i>
+    </span>
+  </div>
+  <div  *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)" class="help is-danger">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Message</label>
+  <div class="control has-icons-left has-icons-right">
+    <input class="input" type="text" placeholder="message" name="message" ngModel #myMessage="ngModel" required>
+    <span class="icon is-small is-left">
+      <i class="fa fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fa fa-warning"></i>
+    </span>
+  </div>
+  <p *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)" class="help is-danger">
+    Message is required
+  </p>
+</div>
+
+
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-primary" (click)="addAccessItem(addForm)" >Submit</button>
+  </div>
+</div>
+</form>
