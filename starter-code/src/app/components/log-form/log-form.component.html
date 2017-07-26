@@ -1,0 +1,29 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+  <p> Person
+    <input
+      type="text"
+      name="person"
+      [(ngModel)]="newMessage.person"
+      required />
+  </p>
+
+  <p> Message
+    <input
+      type="text"
+      name="message"
+      [(ngModel)]="newMessage.message"
+      #myMessage="ngModel"
+      minlength="5"
+      required />
+  </p>
+
+  <div *ngIf="myMessage.errors">
+    <p class="error" [hidden]="!myMessage.errors.minlength">Message has to be at least 5 characters long.</p>
+  </div>
+
+  <button type="submit"> Post </button>
+
+  <p class="success" [hidden]="!myForm.submitted">Submitted!</p>
+
+</form>
