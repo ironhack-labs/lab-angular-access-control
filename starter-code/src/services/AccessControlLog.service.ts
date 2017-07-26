@@ -24,7 +24,9 @@ addAccessItem(person: string, messaje: string) {
     person : person,
     messaje : messaje
   }
+  console.log(member)
   this.logMessages.push(member)
+  console.log(this.logMessages)
 }
 
 }
