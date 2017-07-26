@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core'
 
-class Person {
+export class Person {
   constructor(private person:string, private message:string, private createdAt:Date) {}
   static create (person:string, message:string) {
-    new Person(person, message, new Date())
+    return new Person(person, message, new Date())
   }
 }
-
 
 @Injectable()
 export class AccessControlLog {
 
-    private persons:Array<Person>
+    public logMessage:Array<Person> = []
 
     constructor() { }
 
     getAccessLog():Array<Person> {
-      return this.persons
+      return this.logMessage
     }
     addAccessItem(person:string, message:string) {
-      Person.create(person, message)
+      this.logMessage = [...this.logMessage, Person.create(person, message)]
     }
 
 }
