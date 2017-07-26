@@ -1,0 +1,30 @@
+<h2>Log Form</h2>
+
+<form (ngSubmit)="add(myForm)" #myForm="ngForm" novalidate>
+  <p>Person
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" minlength="3" required/>
+  </p>
+
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 3 characters
+    </p>
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person is required
+    </p>
+  </div>
+
+  <p>Message
+    <input type="text" [(ngModel)]="message" name="message" minlength="4" #myMessage="ngModel" required/>
+  </p>
+
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.changed)">
+    <p class="error" [hidden]="!myMessage.errors.minlength">
+      Message must be at least 4 characters
+    </p>
+    <p class="error" [hidden]="!myMessage.errors.required">> Message is required
+    </p>
+  </div>
+
+  <input type="submit" value="Submit">
+</form>
