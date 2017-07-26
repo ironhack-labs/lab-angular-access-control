@@ -1,0 +1,17 @@
+<form (ngSubmit)="submitForm(logIn)" #logIn="ngForm">
+      <p> Person
+        <input type="text" name="person" [(ngModel)]="person" required minlength="6" />
+      </p>
+      <p> Message
+        <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required minlength="6" />
+      </p>
+
+      <div *ngIf="myMessage.errors">
+        <p class="error" [hidden]="!myMessage.errors.minlength"> Your message must be a bit longer </p>
+      </div>
+
+      <button type="submit"> come in! </button>
+      
+       <p class="success" [hidden]="!logIn.submitted"> Submitted successfully</p>  
+
+</form>
