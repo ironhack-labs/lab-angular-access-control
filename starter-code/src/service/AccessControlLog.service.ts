@@ -20,6 +20,7 @@ export class AccessControlLog {
         message : message,
         createdAt : new Date()
       }
+      console.log(member);
       this.logMessages.push(member);
     }
 }
