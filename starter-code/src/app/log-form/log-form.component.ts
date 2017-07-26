@@ -8,7 +8,7 @@ import { AccessControlLog } from '../../services/AccessControlLog.service';
   providers: [AccessControlLog]
 })
 export class LogFormComponent implements OnInit {
-
+  show: boolean = false;
   constructor(public log:AccessControlLog) { } //llamo porque quiero crear una instancia del servicio
 
   ngOnInit() {
@@ -16,5 +16,6 @@ export class LogFormComponent implements OnInit {
 
   submitForm(myForm) {
     this.log.addAccessItem(myForm.form._value.person, myForm.form._value.messaje)
+    this.show = !this.show
   }
 }
