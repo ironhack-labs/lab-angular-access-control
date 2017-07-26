@@ -1,17 +1,24 @@
 import { Injectable } from '@angular/core';
 
+export class Person {
+
+public createdAt: Date
+
+constructor(public person: String, public messaje:String) {
+  this.createdAt = new Date()
+ }
+
+static createNewPerson(person:string,messaje:string){
+  return new Person(person,messaje);
+}
+
+}
+
+
 @Injectable()
 export class AccessControlLog {
-    // User: Object {
-    //   person: string,
-    //   messaje: string,
-    //   createdAt: new Date()
-    // }
-    logMessages: Array<any> = [{
-      person: String,
-      messaje: String,
-      createdAt: new Date()
-    }]
+
+    logMessages: Array<Object> = []
 
     constructor() { }
 
@@ -20,13 +27,8 @@ getAccessLog() {
 }
 
 addAccessItem(person: string, messaje: string) {
-  let member: Object = {
-    person : person,
-    messaje : messaje
-  }
-  console.log(member)
-  this.logMessages.push(member)
-  console.log(this.logMessages)
+
+  this.logMessages.push(Person.createNewPerson(person,messaje))
 }
 
 }
