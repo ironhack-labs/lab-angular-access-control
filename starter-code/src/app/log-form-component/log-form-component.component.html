@@ -1,0 +1,18 @@
+<p>
+  log-form-component works!
+</p>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+     <p> Person
+       <input type="text" name="person" [(ngModel)]="person" required />
+     </p>
+     <p> Message
+       <input type="password" name="message" [(ngModel)]="message" required />
+     </p>
+     <button type="submit"> Save </button>
+   </form>
+
+
+   <div *ngFor="let p of lista">
+     <p>Person: {{p.person}}</p>
+      <p>Message: {{p.message}}</p>
+   </div>
