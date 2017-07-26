@@ -22,7 +22,8 @@ export class AccessControlLog {
       return this.logs;
     }
     addAccessItem(person: string, message:string){
-      let newObj = {person: person, message: message};
+      this.createdAt = new Date();
+      let newObj = {person: person, message: message, createdAt: this.createdAt};
       this.logs.unshift(newObj);
       console.log('LOGS',this.logs);
     }
