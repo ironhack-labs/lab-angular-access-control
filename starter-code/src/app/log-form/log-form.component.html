@@ -1,0 +1,14 @@
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <label for="player">Player:</label>
+  <input type="text" name="person" [(ngModel)]="person" required />
+  <label for="message">Message:</label>
+  <input type="text" name="message" [(ngModel)]="message" minlength="10" required />
+  <button type="submit"> Log </button>
+</form>
+<ul>
+  <li *ngFor="let log of logMessages">
+    <span>name: {{log.person}}</span>
+    <span>description: {{log.message}}</span>
+  </li>
+</ul>
