@@ -1,0 +1,31 @@
+.error {
+  color: tomato;
+  font-weight: bold;
+}
+
+.success {
+  color: lightgreen;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+button {
+  border: none;
+  background-color: lightblue;
+  width: 70px;
+  height: 30px;
+}
+
+input {
+  border-bottom: 1px solid gray;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus {
+  outline: none;
+  border-color: lightblue;
+}
