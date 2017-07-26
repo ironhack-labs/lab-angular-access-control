@@ -1,0 +1,23 @@
+
+<form (ngSubmit)="addAccess(myForm)" #myForm="ngForm">
+  <p>
+    Username
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required/>
+  </p>
+
+  <p>
+    Message
+    <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required/>
+  </p>
+
+  <div [hidden]="!showMessage">
+    <p class="error">The registration was successful</p>
+  </div>
+
+  <!--div *ngIf="myPerson.errors && ( myPerson.dirty || myPerson.touched))">
+    <p [hidden]="!myPerson.errors.required"> The person input must be required</p>
+    <p [hidden]="!myMessage.errors.required"> The message input must be required</p>
+  </div-->
+
+  <button type="submit">Access to the system</button>
+</form>
