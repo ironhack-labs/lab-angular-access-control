@@ -1,0 +1,9 @@
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+  <p>Person
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p>Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit">ENTER</button>
+</form>
