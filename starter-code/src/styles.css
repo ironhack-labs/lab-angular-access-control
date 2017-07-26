@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, #ebe9f9 0%, #cec7ec 100%);
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #8274bb;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    align-self: center;
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
+    border: 1px solid #cec7ec;
+    width: 50vw;
+    padding-left: 10px;
+}
+
+input:active,
+button:active,
+input:focus,
+button:focus {
+    outline: none;
+}
+
+button {
+    display: flex;
+    align-self: center;
+    border: none;
+    padding: 10px 40px;
+    background-color: #333;
+    color: #ebe9f9;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 20px;
+    width: 50vw;
+    justify-content: center;
+}
+
+.register {
+    color: #29a5c1;
+    font-size: 1em;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #8274bb;
+    color: #ebe9f9;
+}
+
+p {
+    margin: 3px;
+    margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color: #7f7f7f;
+}
