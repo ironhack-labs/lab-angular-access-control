@@ -18,6 +18,11 @@ export class LogFormComponentComponent implements OnInit {
 
   submitForm(myForm: NgForm) {
      this.myService.addAccessItem(myForm.value.person, myForm.value.message);
-     console.log(this.myService.getAccessLog());
+     const logs = this.myService.getAccessLog();
+     console.log(`Access service logs:`);
+     logs.forEach(log => {
+       console.log(`User ${log.person} wrote ${log.message} at ${log.createdAt}`);
+     });
+     myForm.resetForm();
    }
 }
