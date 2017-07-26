@@ -1,0 +1,23 @@
+<form class="form" (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+    <div>
+      <p>Person:</p>
+      <label for="person"></label>
+      <input name='person' [(ngModel)]='person' type="text">
+    </div>
+    <div>
+      <p>Message:</p>
+      <label for="message"></label>
+      <input name='message' [(ngModel)]='message' type="text">
+    </div>
+
+    <button>Log Message</button>
+
+</form>
+
+<p class="register">{{registration}}</p>
+<ul *ngFor='let log of loggedObject'>
+  <li>{{log.person}}</li>
+  <li>{{log.message}}</li>
+</ul>
+<!-- <button class="formButton" (click)="printSomething()">Log Message</button> -->
