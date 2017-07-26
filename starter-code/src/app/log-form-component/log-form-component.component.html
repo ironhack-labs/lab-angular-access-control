@@ -1,0 +1,15 @@
+<p>
+  log-form-component works!
+</p>
+
+<div>
+
+  <div>
+    <input #name type="text" placeholder="Person" [(ngModel)]="person">
+  </div>
+  <div>
+    <input type="text" placeholder="Message" [(ngModel)]="message">
+  </div>
+  <br>
+  <button (click)="addLogItem()">Add Item</button>
+</div>
