@@ -1,0 +1,11 @@
+<h3>Access Control</h3>
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Person
+    <input type="text" name="person" ngModel required #myPerson='ngModel'/>
+  </p>
+  <p> Message
+    <input type="text" name="message" ngModel required #myMessage='ngModel'/>
+  </p>
+  <button type="submit"> Submit</button>
+</form>
