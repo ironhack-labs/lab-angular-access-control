@@ -15,8 +15,7 @@ export class PersonFormComponent implements OnInit {
   ngOnInit() {}
 
   submitForm(myForm) {
-    this.service.addAccessItem(myForm.form._value.person, myForm.form._value.description)
+    this.service.addAccessItem(myForm.value.person, myForm.value.description)
     this.logMessages = this.service.getAccessLog()
-    console.log(this.logMessages)
   }
 }
