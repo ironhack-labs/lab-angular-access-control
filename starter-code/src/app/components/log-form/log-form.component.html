@@ -1,0 +1,25 @@
+<form (ngSubmit)="submitForm(logForm)" #logForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" #thisPerson="ngModel" required minlength="3"/>
+  </p>
+  <div *ngIf="thisPerson.errors && (thisPerson.dirty || thisPerson.touched)" >
+    <p class="error" [hidden]="!thisPerson.errors.required">
+      Person is required
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" #thisMessage="ngModel" required />
+  </p>
+  <div *ngIf="thisMessage.errors && (thisMessage.dirty || thisMessage.touched)">
+    <p class="error" [hidden]="!thisMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+
+  <button type="submit" [disabled]="!logForm.valid"> Log </button>
+</form>
+
+<div [hidden]="!submitSuccess">
+  <br>
+  <p class="success">{{person}} was successfully added to the Access Log</p>
+</div>
