@@ -1,7 +1,8 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0-beta.28.3",
-    "name": "contact-app"
+    "version": "1.0.0-beta.31",
+    "name": "lab-access-control"
   },
   "apps": [
     {
@@ -23,7 +24,6 @@
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
-        "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
@@ -58,11 +58,11 @@
     },
     "spec": {
       "class": false,
-      "component": false,
-      "directive": false,
+      "component": true,
+      "directive": true,
       "module": false,
-      "pipe": false,
-      "service": false
+      "pipe": true,
+      "service": true
     }
   }
 }
