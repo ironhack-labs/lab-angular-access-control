@@ -8,10 +8,10 @@ interface logMessages {
 
 @Injectable()
 export class AccessControlLogService {
+
   logMessages: Array<logMessages> = [ ]
 
-  addAccessItem(person, message) {
-
+  addAccessItem(person: string, message: string) {
   }
 
   getAccessLog(): Array<logMessages> {

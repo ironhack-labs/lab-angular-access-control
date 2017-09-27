@@ -1,6 +1,6 @@
-<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+<form (ngSubmit)="addAccess(myForm)" #myForm="ngForm">
   <label for="name">Name</label>
-  <input type="text" name="name" [(ngModel)]="person" required>
+  <input type="text" name="name" [(ngModel)]="name" required>
 
   <label for="messsage">Message</label>
   <textarea type="text-area" name="message" cols="20" rows="2" [(ngModel)]="message"></textarea>
@@ -8,4 +8,6 @@
   <button type="submit">Submit</button>
 </form>
 
-<p>{{ addAccessItem(myForm) }}</p>
+<div class="success" *ngIf="successLogin">
+  <p>Your message was send successfully!</p>
+</div>
