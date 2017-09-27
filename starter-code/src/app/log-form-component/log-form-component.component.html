@@ -1,9 +1,19 @@
-<form (ngSubmit)="addAccessItem(myForm.value.person, myForm.value.message)" #myForm="ngForm">
-      <p> Person
-        <input type="text" name="person" [(ngModel)]="person" required />
-      </p>
-      <p> Message
-        <input type="text" name="message" [(ngModel)]="message" required />
-      </p>
-      <button > New Acces </button>
-    </form>
+<form (ngSubmit)="addAccessItem(myForm.value.person, myForm.value.message)" #myForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" required #myPerson="ngModel" />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person is Required
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" required #myMessage="ngModel" />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is Required
+    </p>
+  </div>
+  <button> New Acces </button>
+</form>
