@@ -14,11 +14,16 @@ export class AccessControlLogService {
   constructor() { }
 
   addAccessItem(person: string, message: string) {
-    console.log(person, message);
+    const user: USER = {
+      person, message, createdAt: new Date()
+    };
+    this.logMessages.push(user);
+    this.getAccessLog();
   }
 
   getAccessLog(): Array<USER> {
-    return 
+    this.logMessages.forEach(e => console.log(e));
+    return this.logMessages;
   }
 
 }

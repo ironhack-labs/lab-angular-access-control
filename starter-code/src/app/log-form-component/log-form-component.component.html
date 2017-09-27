@@ -17,7 +17,7 @@
      [hidden]="!myMessage.errors.required" class="error">
     Message is required
   </p>
-  <button>Post message</button>
+  <button [disabled]="myPerson.errors || myMessage.errors">Post message</button>
 </form>
 <p *ngIf="control && (myPerson.dirty && myMessage.dirty)" class="ok">
   Registration was successful
