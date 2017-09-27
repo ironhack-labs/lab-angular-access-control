@@ -1,0 +1,24 @@
+<form (ngSubmit)="access(myForm)" #myForm="ngForm" novalidate>
+  <p>
+    Person
+    <input type="text" name="person" [(ngModel)]="person"
+           #myPerson="ngModel" required>
+  </p>
+  <p *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)"
+     [hidden]="!myPerson.errors.required" class="error">
+    Person is required
+  </p>
+  <p>
+    Message
+    <input type="text" name="message" [(ngModel)]="message"
+           #myMessage="ngModel" required>
+  </p>
+  <p *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)"
+     [hidden]="!myMessage.errors.required" class="error">
+    Message is required
+  </p>
+  <button [disabled]="myPerson.errors || myMessage.errors">Post message</button>
+</form>
+<p *ngIf="control && (myPerson.dirty && myMessage.dirty)" class="ok">
+  Registration was successful
+</p>
