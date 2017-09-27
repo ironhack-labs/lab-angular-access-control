@@ -1,9 +1,14 @@
-<form (ngSubmit)="addAccess(myForm)" #myForm="ngForm">
+<form (ngSubmit)="addAccess(myForm)" #myForm="ngForm" novalidate>
   <label for="name">Name</label>
-  <input type="text" name="name" [(ngModel)]="name" required>
+  <input type="text" name="name" [(ngModel)]="name" #myName="ngModel" required>
 
   <label for="messsage">Message</label>
-  <textarea type="text-area" name="message" cols="20" rows="2" [(ngModel)]="message"></textarea>
+  <textarea type="text-area" name="message" cols="20" rows="2" #myMessage="ngModel" [(ngModel)]="message" minlength="10"></textarea>
+  <div *ngIf="myMessage.errors">
+    <p [hidden]="!myMessage.errors.minlength">
+      Message must be at least 10 characters long.
+    </p>
+  </div>
 
   <button type="submit">Submit</button>
 </form>
