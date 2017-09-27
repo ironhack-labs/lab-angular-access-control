@@ -8,10 +8,10 @@ export class AccessControl {
     createdAt: Date
   }]
   getAccessLog(){
-    return this.logMessages;
+    console.log(this.logMessages)
+    // return this.logMessages;
   }
-  addAccessItem(){
-    let member: object = {person: String, message: String}
-    this.logMessages.push(member)
+  addAccessItem(result){
+    console.log(result)
   }
 }

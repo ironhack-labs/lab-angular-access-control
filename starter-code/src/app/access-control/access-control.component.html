@@ -1,3 +1,9 @@
-<p>
-  access-control works!
-</p>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Username
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> Submit </button>
+</form>
