@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccesscontrollogService } from '../services/accesscontrollog.service';
 
 @Component({
   selector: 'app-logformcomponent',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogformcomponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public accessThing: AccesscontrollogService
+  ) { }
 
   ngOnInit() {
   }

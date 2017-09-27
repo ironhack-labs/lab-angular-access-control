@@ -1,3 +1,20 @@
-<p>
-  logformcomponent works!
-</p>
+<form (ngSubmit)="addAccessItem()">
+  <label for="person">Person</label>
+  <input id="person" type="text" name="person" value=""
+  [(ngModel)]="accessThing.thePerson.person">
+  <label for="message">Message</label>
+  <input id="message" type="text" name="message" value="" [(ngModel)]="accessThing.thePerson.message">
+  <button>Add</button>
+</form>
+
+<div class="success-message">
+
+</div>
+
+
+
+
+Handle the button event to call the addAccessItem() method in service.
+Once the log is created, show a message in the screen indicating that the registration was successful.
+Use form validations to avoid errors.
+Style the form! Remember we are working for a professional sports team, we have to do our best work here
