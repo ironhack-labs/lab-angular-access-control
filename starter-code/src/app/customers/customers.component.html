@@ -1,0 +1,24 @@
+<h3> Fill Out Your Information </h3>
+
+<form (ngSubmit)="addNewAccess()">
+
+  <label for="person-input"> Name </label>
+  <input id="person-input" type="text" placeholder="John Smith"
+    name="personName" [(ngModel)]="theAccess.person">
+  <br>
+
+  <label for="message-input"> Message </label>
+  <input id="message-input" type="tel" placeholder="555-555-5555"
+    name="personMessage" [(ngModel)]="theAccess.message">
+  <br>
+
+  <button> Add Information </button>
+
+</form>
+
+
+<div *ngFor="let oneCustomer of personThing.getAccessLog()">
+  <h3> {{ oneCustomer.person }}</h3>
+  <p> {{ oneCustomer.message }}</p>
+  <p> {{ oneCustomer.createdAt }}</p>
+</div>
