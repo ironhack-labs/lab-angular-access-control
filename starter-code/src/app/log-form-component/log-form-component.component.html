@@ -1,10 +1,10 @@
 <div class="container">
 	<h4>Access Control Sport</h4>
-	<form class="formLogin" (ngSubmit)="addAccessItem(login)" #login="ngForm">
+	<form class="formLogin" (ngSubmit)="addAccess(login)" #login="ngForm" novalidate>
 		<label for="">Person</label>
-		<input type="text" [(ngModel)]="person" minlength="6"><br>
+		<input type="text" name="person" [(ngModel)]="person" minlength="6"><br>
 		<label for="">Message</label>
-		<input type="text" [(ngModel)]="message" required> <br>
+		<input type="text" name="message" [(ngModel)]="message" required> <br>
 		<button>Submit</button>
 	</form>
 

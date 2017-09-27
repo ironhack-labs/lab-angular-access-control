@@ -10,9 +10,13 @@ import { AccessControlLogService } from '../services/access-control-log.service'
 export class LogFormComponentComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private accessControl: AccessControlLogService) { }
 
   ngOnInit() {
   }
 
+	addAccess(login){
+		this.accessControl.addAccessItem(login.value.person, login.value.message)
+		console.log(this.accessControl.getAccessLog())
+	}
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 interface logMessages {
   person: string,
   message: string,
-  createdAt: Date
+  createdAt: any
 }
 
 @Injectable()
@@ -11,7 +11,7 @@ export class AccessControlLogService {
 
 	successLogin: boolean = false
 	logMessagesArray: Array<logMessages> = []
-
+	
 	constructor() { }
 
   getAccessLog(): Array<logMessages> {
@@ -20,6 +20,7 @@ export class AccessControlLogService {
 
   addAccessItem(person: string, message: string) {
 		this.successLogin = !this.successLogin
+		this.logMessagesArray.push({ person, message, createdAt: Date.now() })
   }
 
 }
