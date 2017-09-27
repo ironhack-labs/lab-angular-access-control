@@ -1,14 +1,24 @@
 <form (ngSubmit)="addNewAccessItem()">
   <label for="person">Person</label>
   <input id="person" type="text" name="person" value=""
-  [(ngModel)]="theAccess.person">
+  [(ngModel)]="theAccess.person" required #personInput="ngModel">
   <label for="message">Message</label>
-  <input id="message" type="text" name="message" value="" [(ngModel)]="theAccess.message">
-  <button>Add</button>
+  <input id="message" type="text" name="message" value="" [(ngModel)]="theAccess.message" required #messageInput="ngModel">
+
+
+
+
+  <p *ngIf="personInput.errors && personInput.dirty">
+  Please enter a username</p>
+
+  <p *ngIf="messageInput.errors && messageInput.dirty">
+  Please enter a message</p>
+
+  <button *ngIf="!messageInput.errors && !personInput.errors">Add</button>
 </form>
 
-<div class="success-message">
-
+<div *ngIf="status" class="success-message">
+    {{status}}
 </div>
 
 <ul>

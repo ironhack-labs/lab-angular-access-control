@@ -8,6 +8,7 @@ import { AccesscontrollogService } from '../services/accesscontrollog.service';
 })
 export class LogformcomponentComponent implements OnInit {
   theAccess: any = {};
+  status: string;
 
   constructor(
     public accessThing: AccesscontrollogService
@@ -19,7 +20,7 @@ export class LogformcomponentComponent implements OnInit {
   addNewAccessItem(){
     this.theAccess.createdAt = new Date();
     this.accessThing.addAcessItem(this.theAccess);
-    console.log(this.theAccess)
+    this.status = "Success";
     this.theAccess = {};
   }
 

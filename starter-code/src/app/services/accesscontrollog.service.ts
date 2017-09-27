@@ -8,8 +8,9 @@ export class AccesscontrollogService {
 
   addAcessItem(theAccess){
     this.logMessages.push(theAccess);
+    this.getAccessLog();
   }
   getAccessLog(){
-    return this.logMessages;
+    console.log(this.logMessages);
   }
 }
