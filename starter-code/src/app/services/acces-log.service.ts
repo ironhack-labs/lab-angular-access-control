@@ -13,7 +13,7 @@ interface AccessObj{
 export class AccesLogService {
 
 
-access: Array<AccessObj>
+access: Array<AccessObj> = []
 
 
 
@@ -26,5 +26,6 @@ access: Array<AccessObj>
   addAccessItem(person:string, message:string){
 
     this.access.push({person:person, message:message, createdAt: new Date()} )
+    console.log(this.access)
   }
 }
