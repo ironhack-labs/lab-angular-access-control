@@ -1,0 +1,21 @@
+<form (ngSubmit)="addPerson(username,message, Success)" #myForm="ngForm" novalidate>
+  <input type="text" name="username" [(ngModel)]="username"
+         #myUsername="ngModel"  minlength="3" />
+
+  <div *ngIf ="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden] ="!myUsername.errors.minlength">
+        Username must be at least 3 characters long.
+    </p>
+  </div>
+
+ <textarea type="text" name="message" [(ngModel)]="message"
+                #myMessage="ngModel" minlength="50"></textarea>
+  <div *ngIf ="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden] ="!myMessage.errors.minlength">
+        Message must be at least 50 characters long.
+    </p>
+  </div>
+
+  <button type="submit" >Add</button>
+  <p #Success class="hidden">Success!</p>
+</form>
