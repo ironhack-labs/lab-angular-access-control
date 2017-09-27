@@ -1,0 +1,12 @@
+
+<form>
+      <p> Person
+        <input type="text" name="person" [(ngModel)]="person" required />
+      </p>
+      <p> Message
+        <input type="text" name="message" [(ngModel)]="message" required />
+      </p>
+      <button (click)="accessLog(person, message)"> signup </button>
+    </form>
+
+    <p *ngIf="successful">Successful!</p>
