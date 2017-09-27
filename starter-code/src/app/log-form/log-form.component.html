@@ -1,0 +1,10 @@
+
+<form (ngSubmit)="addAccessItem(myForm)" #myForm = "ngForm" novalidate>
+  <p> Person <input type=text name="person" [(ngModel)]="person"> </p>
+  <p> Message <input type=text name="message" [(ngModel)]="message"></p>
+  <button type="submit"> Submit </button>
+</form>
+
+<div class="successful" *ngIf="success">
+  <p>Success!</p>
+</div>
