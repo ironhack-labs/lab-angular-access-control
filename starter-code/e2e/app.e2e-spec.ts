@@ -1,10 +1,10 @@
-import { LabAccessControlPage } from './app.po';
+import { StarterCodePage } from './app.po';
 
-describe('lab-access-control App', function() {
-  let page: LabAccessControlPage;
+describe('starter-code App', function() {
+  let page: StarterCodePage;
 
   beforeEach(() => {
-    page = new LabAccessControlPage();
+    page = new StarterCodePage();
   });
 
   it('should display message saying app works', () => {

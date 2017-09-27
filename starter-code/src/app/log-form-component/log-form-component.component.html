@@ -1,0 +1,15 @@
+<div class="container">
+	<h4>Access Control Sport</h4>
+	<form class="formLogin" (ngSubmit)="addAccess(login)" #login="ngForm" novalidate>
+		<label for="">Person</label>
+		<input type="text" name="person" [(ngModel)]="person" minlength="6"><br>
+		<label for="">Message</label>
+		<input type="text" name="message" [(ngModel)]="message" required> <br>
+		<button>Submit</button>
+	</form>
+
+	<div class="success" *ngIf="successLogin">
+		<p>Success Login</p>
+	</div>
+
+</div>
