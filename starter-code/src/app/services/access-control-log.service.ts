@@ -12,6 +12,7 @@ export class AccessControlLogService {
   logMessages: Array<logMessages> = [ ]
 
   addAccessItem(person: string, message: string) {
+    console.log(person, message)
   }
 
   getAccessLog(): Array<logMessages> {
