@@ -9,6 +9,7 @@ interface logMessages {
 @Injectable()
 export class AccessControlLogService {
 
+	successLogin: boolean = false
 	logMessagesArray: Array<logMessages> = []
 
 	constructor() { }
@@ -18,7 +19,7 @@ export class AccessControlLogService {
   }
 
   addAccessItem(person: string, message: string) {
-
+		this.successLogin = !this.successLogin
   }
 
 }
