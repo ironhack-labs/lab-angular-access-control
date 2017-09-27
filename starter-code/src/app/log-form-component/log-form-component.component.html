@@ -1,12 +1,14 @@
 
-<form>
+<form novalidate>
       <p> Person
         <input type="text" name="person" [(ngModel)]="person" required />
+
       </p>
       <p> Message
         <input type="text" name="message" [(ngModel)]="message" required />
       </p>
       <button (click)="accessLog(person, message)"> signup </button>
+      <button (click)="showAccess()">enseñame todo cabron</button>
     </form>
 
     <p *ngIf="successful">Successful!</p>

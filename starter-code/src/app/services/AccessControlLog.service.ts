@@ -14,6 +14,7 @@ export class AccessLog {
   constructor() { }
 
   getAccessLog() {
+      console.log(this.logMessages)
   }
 
   addAccessTime(person, message) {

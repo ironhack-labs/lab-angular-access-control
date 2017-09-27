@@ -21,4 +21,8 @@ export class LogFormComponent implements OnInit {
     this.successful = true;
   }
 
+  showAccess(){
+    this.theAccessLog.getAccessLog();
+  }
+
 }
