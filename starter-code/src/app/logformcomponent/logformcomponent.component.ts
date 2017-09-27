@@ -7,12 +7,20 @@ import { AccesscontrollogService } from '../services/accesscontrollog.service';
   styleUrls: ['./logformcomponent.component.css']
 })
 export class LogformcomponentComponent implements OnInit {
+  theAccess: any = {};
 
   constructor(
     public accessThing: AccesscontrollogService
   ) { }
 
   ngOnInit() {
+  }
+
+  addNewAccessItem(){
+    this.theAccess.createdAt = new Date();
+    this.accessThing.addAcessItem(this.theAccess);
+    console.log(this.theAccess)
+    this.theAccess = {};
   }
 
 }
