@@ -1,0 +1,46 @@
+<form (ngSubmit)="addNewAccessItem()">
+  <label for="person">Person</label>
+  <input id="person" type="text" name="person" value=""
+  [(ngModel)]="theAccess.person" required #personInput="ngModel">
+  <label for="message">Message</label>
+  <input id="message" type="text" name="message" value="" [(ngModel)]="theAccess.message" required #messageInput="ngModel">
+
+
+
+
+  <p *ngIf="personInput.errors && personInput.dirty">
+  Please enter a username</p>
+
+  <p *ngIf="messageInput.errors && messageInput.dirty">
+  Please enter a message</p>
+
+  <button *ngIf="!messageInput.errors && !personInput.errors">Add</button>
+</form>
+
+<div *ngIf="status" class="success-message">
+    {{status}}
+</div>
+
+<ul>
+  <li *ngFor="let log of accessThing.logMessages">
+    <h3>Name: {{log.person}}</h3>
+    <p>Message: {{log.message}}</p>
+    <p>{{log.createdAt}}</p>
+  </li>
+</ul>
+
+
+
+<!-- Handle the button event to call the addAccessItem() method in service.
+Once the log is created, show a message in the screen indicating that the registration was successful.
+Use form validations to avoid errors.
+Style the form! Remember we are working for a professional sports team, we have to do our best work here
+teration 3: Show the registers
+
+The access log information is supposed to be secret. No one will be able to see the whole log. But we want to be sure that everything is working fine, so we have to show the whole list of logs somehow.
+
+After a person registers, we will show the list in the browser's console. It's easy, you have to iterate over all the elements in the array and show the information with console.log.
+
+Tasks
+
+After each insertion, get all the elements in the array and show them in the console. -->
