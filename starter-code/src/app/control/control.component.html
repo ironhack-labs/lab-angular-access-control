@@ -1,0 +1,20 @@
+<p>
+  control works!
+</p>
+<form (ngSubmit)="check(myForm)" #myForm="ngForm" novalidate>
+
+   <label for="person">Person</label>
+   <input type="text" name="person" #myperson="ngModel" [(ngModel)]="person" minlength="6" />
+   <div *ngIf="myperson.errors && (myperson.dirty || myperson.touched)">
+     <p [hidden]="!myperson.errors.minlength">
+       Username must be at least 6 characters long.
+     </p>
+  </div>
+   <label for="message"></label>
+   <input type="text" name="message" [(ngModel)]="message">
+   <button type="submit">submit</button>
+ </form>
+
+<div *ngIf = "controller">
+  <p>Registartion was succesful</p>
+</div>
