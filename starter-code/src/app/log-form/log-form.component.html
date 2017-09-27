@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="addAccess(myForm)" #myForm="ngForm" novalidate>
+  <form (ngSubmit)="myForm.valid && addAccess(myForm)" #myForm="ngForm" novalidate>
   <label for="name">Name</label>
   <input type="text" name="name" [(ngModel)]="name" #myName="ngModel" required>
   <div *ngIf="myName.errors">
@@ -17,7 +17,7 @@
   </div>
 
   <button class="btn" type="submit">Submit</button>
-  
+
 </form>
 </div>
 
