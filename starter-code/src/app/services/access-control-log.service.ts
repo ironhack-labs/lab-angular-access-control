@@ -14,7 +14,7 @@ export class AccessControlLogService {
   constructor() { }
 
   addAccessItem(person: string, message: string) {
-
+    console.log(person, message);
   }
 
   getAccessLog(): Array<USER> {
