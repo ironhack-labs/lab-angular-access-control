@@ -1,0 +1,46 @@
+<h2> Insert new access item</h2>
+
+<form (ngSubmit)="logsThang.addAccessItem(log)" novalidate>
+  <label for="person"> Person </label>
+  <input  id="person" type="text" placeholder="John"
+    required minlength="3" #myUserInput="ngModel"
+    name="person" [(ngModel)]="log.person">
+  <br>
+
+  <div *ngIf="myUserInput.errors && myUserInput.dirty">
+    <p class="error" *ngIf="myUserInput.errors.required">
+      Please provide a password.
+    </p>
+
+    <p class="error" *ngIf="myUserInput.errors.minlength">
+      Your password must be at least 8 characters long.
+    </p>
+  </div>
+
+
+
+
+  <label    for="message"> Message </label>
+  <textarea  id="message" type="text" name="message"
+    required minlength="8" #myPasswordInput="ngModel"
+    [(ngModel)]="log.message"></textarea>
+  <br>
+
+  <div *ngIf="myPasswordInput.errors && myPasswordInput.dirty">
+    <p class="error" *ngIf="myPasswordInput.errors.required">
+      Please provide a password.
+    </p>
+
+    <p class="error" *ngIf="myPasswordInput.errors.minlength">
+      Your password must be at least 8 characters long.
+    </p>
+  </div>
+
+
+
+  <button> Submit </button>
+</form>
+
+<div *ngIf="logsThang.works" class="success">
+  <p>Success!</p>
+</div>
