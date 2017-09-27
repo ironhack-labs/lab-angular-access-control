@@ -1,0 +1,25 @@
+form {
+  width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+input {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+h2 {
+  text-align: center;
+}
