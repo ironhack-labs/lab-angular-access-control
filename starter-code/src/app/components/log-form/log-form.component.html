@@ -1,0 +1,20 @@
+<form (ngSubmit)="addAccesItem(myForm)" #myForm="ngForm">
+  <div>
+  <input type="text" placeholder="user" name="username" [(ngModel)]="username" #myUsername="ngModel" required minlength="2">
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 2 characters long.
+    </p>
+  </div>
+  </div>
+  <div>
+  <input type="text" placeholder="message" name="message" [(ngModel)]="message" #myMessage="ngModel" required>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  </div>
+  <button type="submit" [disabled]="!myForm.form.valid"> Submit </button>
+  <p *ngIf="myForm.form.valid && logged"> Logged </p>
+</form>
