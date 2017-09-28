@@ -10,10 +10,11 @@ export class AccessControlLogService {
   constructor() { }
 
   addAccessItem(person, message){
-
+    this.logMessages.push({person: person, message: message, createdAt: new Date()})
   }
 
-  getAccessLog(){
-
+  getAccessLog(): LogMessage[] {
+    return this.logMessages;
   }
+
 }
