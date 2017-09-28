@@ -1,0 +1,25 @@
+
+form {
+  padding: 12px;
+}
+
+.form-control {
+  padding-bottom: 12px;
+}
+
+.form-control .form-label {
+  display: block;
+  padding-bottom: 6px;
+}
+
+.feedback {
+  display: none;
+  padding: 6px;
+  background-color: red;
+  color: white;
+}
+
+.form-control.has-error .feedback {
+  border: 1px solid red;
+  display: block;
+}
