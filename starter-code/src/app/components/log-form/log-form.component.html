@@ -1,0 +1,7 @@
+<form (ngSubmit)="submitForm(accessForm)" #accessForm="ngForm">
+  <label for="person">Person</label>
+  <input type="text" name="person" [(ngModel)]="person" required>
+  <label for="message">Message</label>
+  <input type="text" name="message" [(ngModel)]="message" required>
+  <button type="submit">Add Message</button>
+</form>
