@@ -1,0 +1,27 @@
+<form (ngSubmit)="accessServiceObj.addAccessItem(oneAccess.person, oneAccess.message)">
+  <label for="person">Person</label>
+  <input id="person" [(ngModel)]="oneAccess.person" name="person"
+    required #personInput="ngModel">
+
+  <br>
+
+  <div *ngIf="personInput.errors">
+    <p class="error" *ngIf="personInput.errors.required">
+      Please enter your Name
+    </p>
+  </div>
+
+  <label for="message">Message</label>
+  <input id="message" [(ngModel)]="oneAccess.message" name="message"
+    required #messageInput="ngModel">
+
+  <br>
+
+  <div *ngIf="messageInput.errors">
+    <p class="error" *ngIf="messageInput.errors.required">
+      Please enter your message
+    </p>
+  </div>
+
+  <button>Add Access Item</button>
+</form>
