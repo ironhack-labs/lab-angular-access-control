@@ -8,7 +8,9 @@ import { AccesControlLog } from '../../services/log.service'
 })
 export class LogFormComponent implements OnInit {
 
-  logged = false;
+  logged: boolean = false;
+  username: string = '';
+  message: string = '';
 
   constructor(private accesControlLog: AccesControlLog) { }
 
@@ -16,8 +18,8 @@ export class LogFormComponent implements OnInit {
 
   }
 
-  addAccesItem(myForm) {
-    this.accesControlLog.addAccesItem(myForm.value.username, myForm.value.message);
+  addAccesItem() {
+    this.accesControlLog.addAccesItem(this.username, this.message);
     this.logged = true;
     this.showAllTheLogs();
   }

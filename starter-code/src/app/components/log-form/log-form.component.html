@@ -1,4 +1,4 @@
-<form (ngSubmit)="addAccesItem(myForm)" #myForm="ngForm">
+<form (ngSubmit)="addAccesItem()" #myForm="ngForm">
   <div>
   <input type="text" placeholder="user" name="username" [(ngModel)]="username" #myUsername="ngModel" required minlength="2">
   <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
