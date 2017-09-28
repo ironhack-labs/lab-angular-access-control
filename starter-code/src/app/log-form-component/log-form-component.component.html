@@ -1,4 +1,4 @@
-<form (ngSubmit)="myForm.valid && submitForm(myForm)" #myForm="ngForm" novalidate>  <p> person
+<form (ngSubmit)="myForm.valid && addAccess(myForm)" #myForm="ngForm" novalidate>  <p> person
     <input type="text" name="person" [(ngModel)]="person"  #myPerson='ngModel' required/>
   </p>
   <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">

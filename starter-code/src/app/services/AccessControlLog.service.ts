@@ -18,7 +18,6 @@ export class AccessService {
       return this.logMessage
     }
     addAccessItem(person, message){
-
       this.logMessage.push({person:person, message:message, createAt: new Date()})
       console.log(this.logMessage)
     }

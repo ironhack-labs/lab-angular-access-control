@@ -17,13 +17,10 @@ myForm = {
 
   ngOnInit() {
   }
-// addAccess(myForm){
-//   console.log()
-//   this.myForm.person = myForm.value.person
-//   this.myForm.message = myForm.value.message
-//   this.accessControl.addAccessItem(this.myForm.person, this.myForm.message);
-// }
-submitForm(myForm) {
-    console.log(myForm);
+addAccess(myForm){
+  this.myForm.person = myForm.value.person
+  this.myForm.message = myForm.value.message
+  this.accessControl.addAccessItem(this.myForm.person, this.myForm.message);
+
 }
 }
