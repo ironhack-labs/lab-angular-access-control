@@ -11,9 +11,11 @@ export class AccessControlLogService {
 
   addAccessItem(person, message){
     this.logMessages.push({person: person, message: message, createdAt: new Date()})
+    this.getAccessLog();
   }
 
   getAccessLog(): LogMessage[] {
+    console.log(this.logMessages)
     return this.logMessages;
   }
 
