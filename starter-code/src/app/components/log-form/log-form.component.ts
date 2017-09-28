@@ -8,8 +8,10 @@ import { AccessControlLogService } from '../../service/access-control-log.servic
   styleUrls: ['./log-form.component.css']
 })
 export class LogFormComponent implements OnInit {
-  person: string = 'foo';
-  message: string = 'bar';
+  formModel = {
+    person: 'fooiii',
+    message: 'bar'
+  }
   success: boolean = false;
 
   constructor(private accessControlLogService: AccessControlLogService) {
@@ -18,8 +20,9 @@ export class LogFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleClick(){
-    this.accessControlLogService.addAccessItem(this.person, this.message)
+  handleSubmitForm(form){
+    console.log(form)
+    this.accessControlLogService.addAccessItem(this.formModel.person, this.formModel.message)
     this.success = true;
     setTimeout(() => {
       this.success = false;

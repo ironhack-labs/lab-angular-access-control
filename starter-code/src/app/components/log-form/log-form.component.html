@@ -1,6 +1,26 @@
+<form #theForm="ngForm" (ngSubmit)="handleSubmitForm(theForm)" [ngClass]="{'has-error': theForm.invalid}">
 
-<input type="text" placeholder="name" [(ngModel)]="person">
-<input type="text" placeholder="message" [(ngModel)]="message">
-<button (click)="handleClick()">submit</button>
+  <div class="form-control" [ngClass]="{'has-error': person.invalid}">
+    <label class="form-label">person</label>
+    <input #person="ngModel" name="person" type="text" placeholder="name" [(ngModel)]="formModel.person" required minlength="5">
+    <ul class="feedback">
+      <li *ngIf="person.errors && person.errors.required" class="error">Please enter the name</li>
+      <li *ngIf="person.errors && person.errors.minlength" class="error">Longer name pls</li>
+    </ul>
+  </div>
+
+  <div class="form-control" [ngClass]="{'has-error': message.invalid}">
+    <label class="form-label">message</label>
+    <input #message="ngModel" name="message" type="text" placeholder="message" [(ngModel)]="formModel.message" required minlength="5">
+    <ul class="feedback">
+      <li *ngIf="message.errors && message.errors.required" class="error">Please enter the message</li>
+      <li *ngIf="message.errors && message.errors.minlength" class="error">Longer message pls</li>
+    </ul>
+  </div>
+
+  <div class="form-control">
+    <button [disabled]="theForm.invalid">submit</button>
+  </div>
+</form>
 
 <p *ngIf="success">Registration successful!</p>
