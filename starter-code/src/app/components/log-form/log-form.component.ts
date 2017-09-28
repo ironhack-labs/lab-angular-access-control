@@ -12,6 +12,7 @@ import { AccessLogService } from '../../services/access-log.service';
 export class LogFormComponent implements OnInit {
 
   accessLog = this.accessService.accessLog;
+  submitted = false;
 
   constructor(private accessService: AccessLogService) { }
 
@@ -19,6 +20,11 @@ export class LogFormComponent implements OnInit {
   }
 
   submitForm(any) {
-    console.log(any.value);
+    this.accessService.addAccessItem(any.value.person, any.value.message);
+    this.submitted = true;
+    console.log(this.accessLog);
+    setTimeout(() => { this.submitted = false; }, 1000);
   }
+
+
 }
