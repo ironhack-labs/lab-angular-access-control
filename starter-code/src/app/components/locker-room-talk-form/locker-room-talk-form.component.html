@@ -1,0 +1,11 @@
+<p>
+  locker-room-talk-form works!
+</p>
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  <p>Enter your name</p>
+  <input type="text" name="person" [(ngModel)]="person">
+  <p>Enter your message</p>
+  <input type="text" name="message" [(ngModel)]="message">
+  <button type="submit">Submit</button>
+</form>
