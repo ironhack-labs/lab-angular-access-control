@@ -22,6 +22,7 @@ export class AccescontrollogService {
       this.newLog.message=message;
       this.newLog.createAt=new Date();
       this.Logs.push(this.newLog);
+      console.log("Click");
       
     }
 
