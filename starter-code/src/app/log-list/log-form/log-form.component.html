@@ -1,0 +1,15 @@
+<h2> Add a Locker Room User </h2>
+
+<form (ngSubmit)="addNewAccessItem()">
+
+  <label for="name-input"> Locker Room User: </label>
+  <input id="name-input" type="text" placeholder="Sum Yum Gui"
+          name="contactName" [(ngModel)]="theAccessItem.person">
+  <br>
+  <label for="message-input"> Message: </label>
+  <input id="message-input" type="text" placeholder="walking in"
+          name="contactMessage" [(ngModel)]="theAccessItem.message">
+  <br>
+
+  <button> Add this Log </button>
+</form>

@@ -1,0 +1,11 @@
+<h2> Master Log List</h2>
+
+<ul>
+  <li *ngFor="let oneAccess of accessThang.people">
+  <h3> Name: {{ oneAccess.person}} </h3>
+  <p>  Message: {{ oneAccess.message}} </p>
+  <p>  Date Accessed: {{ oneAccess.createdAt | date: 'EEEE, MMMM d, y'}}</p>
+  </li>
+</ul>
+
+<app-log-form></app-log-form>
