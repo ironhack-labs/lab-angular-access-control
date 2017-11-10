@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import visitList from './visits';
+import * as _ from 'underscore';
+
 
 @Injectable()
 export class VisitListService {
@@ -12,11 +14,11 @@ export class VisitListService {
     this.visits = visitList;
   }
 
-  addAccessItem(name, message, date:Date){
+  addAccessItem(name, message){
     let newVisit = {
       name: name,
       message: message,
-      createdAt: date
+
     }
     visitList.push(newVisit);
   }

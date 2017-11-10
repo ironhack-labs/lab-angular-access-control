@@ -1,0 +1,30 @@
+<p>
+  log-form-component works!
+</p>
+
+<p>
+  iteration1 works!
+</p>
+<div class="">
+<div>
+  <label for="visit-name">Name</label>
+  <input type="text" [(ngModel)]="newVisit.name">
+</div>
+<div>
+  <label for="visit-message">Message</label>
+  <input type="text" [(ngModel)]="newVisit.message">
+</div>
+
+</div>
+<button (click)="addAccessItem(newVisit.name, newVisit.message)">Submit New Visit</button>
+
+
+<div id="Visit" class="col-xs-6" *ngFor="let visit of visits">
+    <div class="col-xs-4">
+
+    </div>
+    <div id="info" class="col-xs-8">
+      <p><b>Name:</b> {{visit.name}}</p>
+      <p><b>Message:</b> {{visit.message}}</p>
+    </div>
+  </div>
