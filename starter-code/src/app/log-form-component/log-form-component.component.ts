@@ -18,6 +18,10 @@ export class LogFormComponentComponent implements OnInit {
     this.visits = visitList;
   }
 
+getAccessLog(){
+  this.visitAdder.getAccessLog();
+}
+
 addAccessItem(name, message){
   this.visitAdder.addAccessItem(name, message);
 }

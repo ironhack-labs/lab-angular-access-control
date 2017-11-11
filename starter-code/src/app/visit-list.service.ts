@@ -21,6 +21,7 @@ export class VisitListService {
 
     }
     visitList.push(newVisit);
+    console.log(visitList);
   }
 
   getAccessLog(){

@@ -18,6 +18,8 @@
 </div>
 <button (click)="addAccessItem(newVisit.name, newVisit.message)">Submit New Visit</button>
 
+<button (click)="getAccessLog()">Access Log</button>
+
 
 <div id="Visit" class="col-xs-6" *ngFor="let visit of visits">
     <div class="col-xs-4">
