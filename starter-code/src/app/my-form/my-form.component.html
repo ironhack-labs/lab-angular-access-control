@@ -1,0 +1,22 @@
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm" novalidate>
+  <p class="label"> Username </p>
+    <input class="input" type="text" name="username" [(ngModel)]="username" #myUsername="ngModel" minlength="6">
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+  </div>
+    <p class="label"> Password </p>
+    <input class="input" type="text" name="password" [(ngModel)]="password" #myPassword="ngModel" minlength="1" required>
+    <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+      <p class="error" [hidden]="!myPassword.errors.required">
+        Password is required
+      </p>
+    </div>
+    <div class="button">
+      <button [disabled]="!myForm.valid" type="submit"> Submit </button>
+    </div>
+    <div>
+      <p>Registered Successfully</p>
+    </div>
+</form>
