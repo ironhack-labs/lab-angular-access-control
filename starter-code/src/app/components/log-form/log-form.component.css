@@ -1,6 +1,28 @@
 input {
   border: dashed 2px darkred;
-  margin: 2%;
+  margin: 0 2%;
   padding: 1%;
   border-radius: 5px;
+}
+button {
+  background-color: #5eda5e;
+  padding: 2%;
+  margin: 0 2%;
+  color: white;
+  font-weight: 600;
+  font-variant-caps: all-petite-caps;
+}
+
+.reply {
+  display:inline-block;
+  color:#5eda5e;
+  line-height: 0.5;
+}
+
+li {
+  list-style:none;
+}
+
+.person-label {
+  transition-timing-function: linear;
 }

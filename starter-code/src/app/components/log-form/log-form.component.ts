@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccessControlLogService } from '../../services/access-control-log.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-log-form',
