@@ -14,10 +14,11 @@ export class AccessControlLog {
       createdAt: new Date()
     });
     alert('Person and message registed correctly!')
-    console.log(this.logMessages);
+    this.getAccessLog();
   }
 
   getAccessLog(): Array<Object> {
+    console.log(this.logMessages);
     return this.logMessages;
   }
 
