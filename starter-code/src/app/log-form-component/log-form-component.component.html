@@ -4,7 +4,7 @@
 <form (ngSubmit)="AddItem(myForm)" #myForm="ngForm" novalidate>
   <p> Person
     <input type="text" name="person" [(ngModel)]="person"
-          #myPerson="ngModel" minlength="6" required />
+          #myPerson="ngModel" minlength="3" required />
   </p>
 
   <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
