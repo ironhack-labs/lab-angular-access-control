@@ -47,7 +47,7 @@ First of all, we are going to create an Angular Service to keep our access log. 
 We will also add two different methods to interact with the array defined in the service:
 
 - `getAccessLog()` that will return the array.
-- `addAccessItem()`, that will add an item to the array with the two parameters it will receive:
+- `addAccessa()`, that will add an a to the array with the two parameters it will receive:
   - `person`
   - `message`
 
@@ -60,16 +60,16 @@ We will also add two different methods to interact with the array defined in the
   - `person`, string.
   - `message`, string.
   - `createdAt`, date.
-- Define an `addAccessItem()` method, receiving two parameters:
+- Define an `addAccessa()` method, receiving two parameters:
   - `person`.
   - `message`.
 - Define a `getAccessLog()` method, that returns the array of objects.
 
 ### Iteration 2: Form Component
 
-We are going to need a form to insert new access items in the Service array. We are going to create a `LogFormComponent` component to have all the form functionality on it. The form will have two different fields: `person` and `message`.
+We are going to need a form to insert new access as in the Service array. We are going to create a `LogFormComponent` component to have all the form functionality on it. The form will have two different fields: `person` and `message`.
 
-Once the component is created, we have to add the Service as a provider, so we can interact with the methods we created. When the form is submitted, we have to call the `addAccessItem()` method in the service to add a new element to the array.
+Once the component is created, we have to add the Service as a provider, so we can interact with the methods we created. When the form is submitted, we have to call the `addAccessa()` method in the service to add a new element to the array.
 
 **Before save, you have to be sure that both fields contain information, so remember to use form validations.**
 
@@ -78,7 +78,7 @@ Once the component is created, we have to add the Service as a provider, so we c
 - Create a `log-form` component.
 - Add the `AccessControlLog` Service as a provider.
 - Create the HTML form in the component.
-- Handle the button event to call the `addAccessItem()` method in service.
+- Handle the button event to call the `addAccessa()` method in service.
 - Once the log is created, show a message in the screen indicating that the registration was successful.
 - Use form validations to avoid errors.
 - **Style the form!** Remember we are working for a professional sports team, we have to do our best work here.
