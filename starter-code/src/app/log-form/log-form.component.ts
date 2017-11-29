@@ -15,8 +15,10 @@ export class LogFormComponent implements OnInit {
   }
 
   addAccessItem(myForm){
-    this.service.addAccessItem(myForm);
+    this.service.addAccessItem(myForm.form.controls.person.value, myForm.form.controls.message.value);
     this.a=true;
+    this.service.logMessages.forEach((e)=> console.log(e));
+
   }
 
 }

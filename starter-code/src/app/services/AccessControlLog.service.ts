@@ -14,7 +14,7 @@ export class AccessControlLog {
   getAccessLog():Array<object> {
     return this.logMessages;
   }
-  addAccessItem(ngForm){
-    console.log(ngForm)
+  addAccessItem(person:string, message:string){
+    this.logMessages.push({person, message, createdAt:new Date()});
   }
 }
