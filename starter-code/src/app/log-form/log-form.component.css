@@ -1,0 +1,38 @@
+.error {
+  color: red;
+  font-size: small;
+}
+.container {
+  width: 400px;
+  margin: auto;
+}
+input {
+  font-size: 24px;
+  font-weight: bold;
+  background: #CCC;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+label span{
+  font-size: 13px;
+  color: #666;
+}
+fieldset {
+  border: none;
+  margin: 30px 0;
+  max-width: 400px;
+  padding: 0;
+}
+button {
+  display: block;
+  font-size: 24px;
+  margin: 30px 0;
+  padding: 10px 20px;;
+  border: none;
+  border-radius: 4px;
+  background-color:#8BC34A;
+  color: #fff;
+}

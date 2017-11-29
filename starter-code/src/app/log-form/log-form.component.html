@@ -1,0 +1,26 @@
+<div class="container">
+  <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+    <fieldset>
+      <label><span>Person</span>
+        <input type="text" name="person" [(ngModel)]="person" #thePerson="ngModel" required>
+        <div *ngIf="thePerson.errors && (thePerson.dirty || thePerson.touched)">
+          <p class="error" [hidden]="!thePerson.errors.required">
+            A name is required
+          </p>
+        </div>
+      </label>
+    </fieldset>
+    <fieldset>
+      <label><span>Message</span>
+        <input type="text" name="message" [(ngModel)]="message" #theMessage="ngModel" required>
+      </label>
+      <div *ngIf="theMessage.errors && (theMessage.dirty || theMessage.touched)">
+        <p class="error" [hidden]="!theMessage.errors.required">
+          A message is required
+        </p>
+      </div>
+    </fieldset>
+    <!-- <input type="hidden" name="createdAt" [(ngModel)]="logMessage.createdAt = new Date()"> -->
+    <button type="submit" [disabled]="!myForm.valid">Add log entry</button>
+  </form>
+</div>

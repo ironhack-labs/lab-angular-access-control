@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AccessControlLogService } from '../services/accessControlLog.service'
+
 import { AppComponent } from './app.component';
+import { LogFormComponent } from './log-form/log-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogFormComponent
   ],
   imports: [
     BrowserModule,
