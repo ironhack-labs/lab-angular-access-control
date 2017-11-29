@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AccessControlLogService } from '../../services/access-control-log.service';
 import { setTimeout } from 'timers';
+import { DatePipe } from '@angular/common';
+
 
 
 @Component({

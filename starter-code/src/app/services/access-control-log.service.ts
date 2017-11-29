@@ -18,7 +18,7 @@ export class AccessControlLogService {
    }
 
   getAccessLog(){
-   this.logMessages.forEach((el, index) => (
+   this.logMessages.forEach(el => (
      console.log(`${el.name} logged in to ${el.message} at ${el.createdAt}`)
    ));
   }
