@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 
-interface logs{
+interface Logs {
   person:string;
   message:string;
   createdAt:Date;
 }
 @Injectable()
-export class AccessControlLog{
-  logs: Array<logs> = [];
+export class AccessControlLog {
+  logs: Array<Logs> = [];
 
   constructor() { }
 
   getAccessLog(){
     return this.logs;
   }
-  addAccessItem(person:string,message:string){
+  addAccessItem(person:string,message:string) {
     this.logs.push({
       person,
       message,
