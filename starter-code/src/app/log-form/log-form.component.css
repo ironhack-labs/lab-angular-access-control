@@ -1,0 +1,19 @@
+input {
+  padding: 5px 10px;
+}
+
+button {
+  padding: 6px 20px;
+}
+
+.ng-touched {
+  border-color: blue;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.ng-touched.ng-valid {
+  border-color: green;
+}
