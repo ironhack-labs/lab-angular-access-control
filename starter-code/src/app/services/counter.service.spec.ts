@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CounterService } from './counter.service';
+import { AccessControlLog } from './counter.service';
 
 describe('CounterService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CounterService]
+      providers: [AccessControlLog]
     });
   });
 
-  it('should be created', inject([CounterService], (service: CounterService) => {
+  it('should be created', inject([AccessControlLog], (service: AccessControlLog) => {
     expect(service).toBeTruthy();
   }));
 });
