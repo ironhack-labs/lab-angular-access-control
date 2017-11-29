@@ -14,5 +14,6 @@ getAccessLog(){
 }
 addAccessItem(person, message){
   this.access.push(person, message)
+  console.log(this.access)
 }
 }
