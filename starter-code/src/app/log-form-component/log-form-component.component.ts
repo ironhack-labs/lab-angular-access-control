@@ -18,6 +18,7 @@ export class LogFormComponentComponent implements OnInit {
   sendForm(form){
     this.accessing.addAccessItem(form.value.person, form.value.message);
     this.toggleMessage();
+    form.reset();
   }
 
   toggleMessage(){
