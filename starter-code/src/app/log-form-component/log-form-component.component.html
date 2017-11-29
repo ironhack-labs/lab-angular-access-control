@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" novalidate>
+  <p> Name
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Please, enter a valid name.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit"> Send! </button>
+</form>
+
+<div *ngIf="inilong < 0">
+  <p>Sent succesfully</p>
+</div>
