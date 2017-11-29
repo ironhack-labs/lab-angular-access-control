@@ -11,6 +11,7 @@
   <p> Message
     <input type="text" name="message" [(ngModel)]="message"
           #myMessage="ngModel" required />
+          
   </p>
   <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
     <p class="error" [hidden]="!myMessage.errors.required">

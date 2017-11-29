@@ -15,6 +15,7 @@ export class LogFormComponentComponent implements OnInit {
 submitForm(myForm){
   this.accessService.addAccessItem(myForm.value.person, myForm.value.message);
   this.a = true;
+  this.accessService.access.forEach(e => console.log(e));
 }
 
 }
