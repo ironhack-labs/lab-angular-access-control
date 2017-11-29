@@ -1,0 +1,28 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+  <div class="field has-error" [ngClass]="{'has-error': feebackEnabled && myPerson.errors}">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required/>
+    <div *ngIf="feebackEnabled && myPerson.errors">
+      <p class="validation" *ngIf="myPerson.errors.required">person required</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feebackEnabled && myMessage.errors}">
+    <label>Message</label>
+    <input type="text" name="message"  [(ngModel)]="message" #myMessage="ngModel" required/>
+    <div *ngIf="feebackEnabled && myMessage.errors">
+      <p class="validation" *ngIf="myMessage.errors.required">message required</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit"> log message</button>
+  </div>
+</form>
+
+<div *ngIf="reply" >
+    <p>Form send!</p>
+</div>
+
+
