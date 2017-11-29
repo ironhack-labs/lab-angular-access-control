@@ -21,8 +21,6 @@ export class AccessControlLog {
       message: message,
       createdAt: new Date()
     }
-
     this.logMessages.push(item);
-    console.log(this.logMessages);
   }
 }
