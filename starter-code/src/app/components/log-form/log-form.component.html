@@ -1,0 +1,40 @@
+<form (ngSubmit)="addItem()" #myForm="ngForm">
+
+  <!-- <p>valid: {{myperson.valid}}</p>
+  <p>errors: {{!!myUsername.errors}}</p>
+  <p>error.required {{myUsername.errors && myUsername.errors.required}}</p>
+  <p>error.minlength {{myUsername.errors && myUsername.errors.minlength}}</p> -->
+
+
+  <!-- <div class="field" [ngClass]="{'has-error': myUsername.errors}"> -->
+    <div>
+    <label>Username</label>
+    <input type="text" name="person" [(ngModel)]="person" #myperson='ngModel'/>
+    <!-- <div *ngIf='myperson.errors'>
+      <p *ngIf='myperson.errors.required' class="validation">person required</p> -->
+    <!-- </div> -->
+  </div>
+
+
+  <!-- <p>valid: {{myPassword.valid}}</p>
+    <p>errors: {{!!myPassword.errors}}</p>
+    <p>error.required {{myPassword.errors && myPassword.errors.required}}</p>
+    <p>error.minlength {{myPassword.errors && myPassword.errors.minlength}}</p> -->
+
+
+  <div class="field">
+    <label>Message</label>
+    <input type="message" name="message" [(ngModel)]="message" #myMessage='ngModel' />
+    <!-- <div *ngIf='mymessage.errors'>
+      <p *ngIf='mymessage.errors.required' class="validation">message required</p> -->
+    
+    <!-- </div> -->
+  </div>
+  <div class="field submit">
+    <button type="submit"> signup </button>
+    <div *ngIf='!myMessage.errors'>
+    <p *ngIf='!myMessage.errors' class="validation">Succesful!</p> 
+    
+    </div>
+  </div>
+</form>
