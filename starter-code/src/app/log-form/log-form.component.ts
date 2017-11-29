@@ -9,15 +9,16 @@ import { AccessControlLogService } from '../../services/access-control-log.servi
 })
 export class LogFormComponent implements OnInit {
 
-  constructor(public controlLog: AccessControlLogService) { }
+  constructor(public controlLog: AccessControlLogService) {}
 
   ngOnInit() {
   }
 
   submitForm(myForm) {
-    console.log(myForm);
     this.controlLog.addAccessItem(myForm.value.person, myForm.value.message);
-    console.log(this.controlLog);
+    this.controlLog.getAccessLog().forEach(log => {
+      console.log(log);
+    });
   }
 
 }
