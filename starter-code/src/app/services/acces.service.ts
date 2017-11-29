@@ -15,6 +15,7 @@ export class AccessControlLog {
   }
 
   addAccesItem(person, message){
+
     let item = {
       person: person,
       message: message,
@@ -22,5 +23,6 @@ export class AccessControlLog {
     }
 
     this.logMessages.push(item);
+    console.log(this.logMessages);
   }
 }
