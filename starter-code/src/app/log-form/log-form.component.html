@@ -1,0 +1,20 @@
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm" novalidate>
+  <p> Person:
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel"  minlength="6"/>
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+    Person name is 6 characters length min.
+    </p>
+  </div>
+  <p> Message:
+    <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel"/>
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required.
+    </p>
+  </div>
+  <button type="submit" [disabled]= "myPerson.error || myMessage.error"> Login </button>
+  <div *ngIf="a"><p>The message was successful</p></div>
+</form>
