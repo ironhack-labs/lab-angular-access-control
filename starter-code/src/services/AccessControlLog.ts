@@ -12,9 +12,8 @@ export class AccessControlLogService implements IPerson{
   private logMessages:Array<IPerson> = [];
 
   addAccessItem(person:string, message:string){
-    const newPerson = {
-      person: this.person,
-      message: this.message,
+    const newPerson:IPerson = {
+      person, message,
       createdAt: new Date()
     }
     this.logMessages.push(newPerson);

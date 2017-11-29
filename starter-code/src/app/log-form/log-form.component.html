@@ -1,0 +1,15 @@
+<h1>FORM!</h1>
+
+<form (ngSubmit)="addToList(form)" #form="ngForm" novalidate>
+  <label for="person">Person</label>
+  <input type="text" name="person" [(ngModel)]="person" required>
+  <br><br>
+  <label for="message">Message</label>
+  <input type="text" name="message" [(ngModel)]="message" required>
+  <br><br>
+  <button type="submit">Send!</button>
+</form>
+
+<div>
+  <p>{{success}}</p>
+</div>
