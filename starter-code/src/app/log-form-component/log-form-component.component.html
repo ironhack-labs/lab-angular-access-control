@@ -1,0 +1,26 @@
+<form (ngSubmit)="sendForm(myForm)" #myForm='ngForm' novalidate>
+  <p> Username
+    <input type="text" name='person' [(ngModel)]="person"
+          #myPerson="ngModel" required/>
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person must exist.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name='message'[(ngModel)]="message"
+          #myMessage="ngModel" minlength = "10" required/>
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.minlength">
+      Message is required (min 10 characters)
+    </p>
+  </div>
+  <button [disabled]="!myForm.valid"> Send </button>
+</form>
+
+<div *ngIf="show">
+  <p>Well done you!!!! The log was successfully created!!!</p>
+  <button (click)='toggleMessage()'>Close</button>
+</div>
