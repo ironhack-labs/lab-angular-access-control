@@ -18,7 +18,7 @@ import { LogFormComponent } from './log-form/log-form.component';
     FormsModule,
     HttpModule
   ],
-  providers: [AccessControlLogService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

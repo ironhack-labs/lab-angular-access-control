@@ -8,7 +8,7 @@ export class AccessControlLogService {
   constructor() { }
 
   addAccessItem(person: string, message: string) {
-    let logMessage: IAccess = {person: person, message: message, createdAt: new Date()};
+    let logMessage: IAccess = {person, message, createdAt: new Date()};
     this.logMessages.push(logMessage);
   }
 
