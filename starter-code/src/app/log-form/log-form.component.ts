@@ -15,9 +15,9 @@ export class LogFormComponent implements OnInit {
   }
 
   submitForm(myForm) {
-    console.log(myForm.controls.person.value);
     this.accessLog.addAccessItem(myForm.controls.person.value, myForm.controls.message.value);
     console.log(this.accessLog.getAccessLog());
+    myForm.reset();
   }
 
 }
