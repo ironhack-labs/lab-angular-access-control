@@ -1,0 +1,30 @@
+.container{
+  margin-top: 50px;
+}
+.header {
+    color: black;
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+    color: black;
+}
+
+.btn-primary {
+     color: #fff;
+     background-color: black;
+     border-color: black;
+   }
+
+   .btn-primary:hover {
+        color: black;
+        background-color: white;
+        border-color: white;
+      }
+
+.container
+{
+  width: 450px;
+}
