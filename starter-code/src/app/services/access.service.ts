@@ -7,13 +7,15 @@ interface Log {
 }
 
 @Injectable()
-export class AccessControlLog implements Log {
-  constructor(public person, public message, public createdAt) { }
+export class AccessControlLog {
   logMessages: Array<Log> = [];
+  constructor() { }
   getAccessLog() {
     return this.logMessages;
   }
   addAccessItem(person:string, message:string) {
-    this.logMessages.push({person, message, createdAt: new Date()});
+    let createdAt = new Date();
+    this.logMessages.push({person, message, createdAt});
+    console.log(this.logMessages);
   }
 }
