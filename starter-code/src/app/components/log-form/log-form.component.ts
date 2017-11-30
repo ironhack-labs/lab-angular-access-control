@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccessControlLogService } from '../../services/access-control-log.service';
 import { DatePipe } from '@angular/common';
+import { LogMessage } from '../../models/logMessage';
 
 @Component({
   selector: 'app-log-form',
@@ -8,9 +9,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./log-form.component.css']
 })
 export class LogFormComponent implements OnInit {
-  newLog: Object = this.theAccessLog;
-  person: String;
-  message: String;
+  newLog = new LogMessage();
   feebackEnabled = false;
   reply = false;
 
@@ -23,10 +22,8 @@ export class LogFormComponent implements OnInit {
     if(theForm.valid){
       this.feebackEnabled = false;
       this.reply = true;
-      this.theAccessLog.addAccessItem(this.person, this.message);
+      this.theAccessLog.addAccessItem(this.newLog);
       this.theAccessLog.getAccessLog();
-      this.person = null;
-      this.message = null;
       setTimeout(() => {
         this.reply = false;
       }, 800 );

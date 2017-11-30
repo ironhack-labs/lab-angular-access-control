@@ -2,7 +2,7 @@
 
   <div class="field has-error" [ngClass]="{'has-error': feebackEnabled && myPerson.errors}">
     <label *ngIf="myPerson.errors === null" class="person-label">Person</label>
-    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" placeholder="person" required/>
+    <input type="text" name="person" [(ngModel)]="newLog.name" #myPerson="ngModel" placeholder="person" required/>
     <div *ngIf="feebackEnabled && myPerson.errors">
       <p class="validation" *ngIf="myPerson.errors.required">person required</p>
     </div>
@@ -10,7 +10,7 @@
 
   <div class="field" [ngClass]="{'has-error': feebackEnabled && myMessage.errors}">
     <label *ngIf="myMessage.errors === null">Message</label>
-    <input type="text" name="message"  [(ngModel)]="message" #myMessage="ngModel" placeholder="message" required/>
+    <input type="text" name="message"  [(ngModel)]="newLog.message" #myMessage="ngModel" placeholder="message" required/>
     <div *ngIf="feebackEnabled && myMessage.errors">
       <p class="validation" *ngIf="myMessage.errors.required">message required</p>
     </div>
