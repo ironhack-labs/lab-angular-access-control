@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form .field {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-style: bold;
+}
+
+form .field.has-error label {
+  color: red;
+}
+
+form .validation {
+  margin: 5px 0 10px;
+  color: red;
+}
+
+form .field.has-error input {
+  border: 1px solid  red;
+}

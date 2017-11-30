@@ -1,0 +1,33 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+  <div class="field has-error" [ngClass]="{'has-error': feebackEnabled && myPerson.errors}">
+    <label *ngIf="myPerson.errors === null" class="person-label">Person</label>
+    <input type="text" name="person" [(ngModel)]="newLog.name" #myPerson="ngModel" placeholder="person" required/>
+    <div *ngIf="feebackEnabled && myPerson.errors">
+      <p class="validation" *ngIf="myPerson.errors.required">person required</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feebackEnabled && myMessage.errors}">
+    <label *ngIf="myMessage.errors === null">Message</label>
+    <input type="text" name="message"  [(ngModel)]="newLog.message" #myMessage="ngModel" placeholder="message" required/>
+    <div *ngIf="feebackEnabled && myMessage.errors">
+      <p class="validation" *ngIf="myMessage.errors.required">message required</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit"> log message</button> <p *ngIf="reply" class="reply">Form send!</p>
+  </div>
+</form>
+
+
+<h2 *ngIf="theAccessLog.logMessages.length != 0">Total Log</h2>
+<ul class="log">
+  <li *ngFor="let log of theAccessLog.logMessages">
+     {{log.person}} logged in at {{log.createdAt | date:'yyyy-MM-dd HH:mm'}} to {{log.message}}
+  </li>
+</ul>
+
+
+
