@@ -1,34 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { AccessControlLogService } from '../../services/access-control-log.service';
-import { setTimeout } from 'timers';
-import { DatePipe } from '@angular/common';
+import { Component, OnInit } from "@angular/core";
+import { AccessControlLogService } from "../../services/access-control-log.service";
+import { setTimeout } from "timers";
+import { DatePipe } from "@angular/common";
+import { LogMessage} from "../../models/LogMessage";
 
 
 
 @Component({
-  selector: 'app-log-form',
-  templateUrl: './log-form.component.html',
-  styleUrls: ['./log-form.component.css']
+  selector: "app-log-form",
+  templateUrl: "./log-form.component.html",
+  styleUrls: ["./log-form.component.css"]
 })
 export class LogFormComponent implements OnInit {
-
-  newLog: object = this.theAccessControl;
-  person: string;
-  message: string;
+  newLog = new LogMessage();
+  // name: string;
+  // message: string;
 
   submitted = false;
   feedbackEnabled = false;
 
-  constructor(public theAccessControl: AccessControlLogService) {  }
+  constructor(private theAccessControl: AccessControlLogService) {  }
 
   ngOnInit() {
+    // this.newLog = this.theAccessControl.newLog;
   }
 
   submitForm(myForm) {
     if (myForm.valid) {
-      this.theAccessControl.addAccessItem(this.person, this.message);
-      this.person = null;
-      this.message = null;
+      this.theAccessControl.addAccessItem(this.newLog);
+      this.newLog = new LogMessage();
       this.submitted = true;
       this.feedbackEnabled = false;
       setTimeout(() => {
@@ -39,7 +39,6 @@ export class LogFormComponent implements OnInit {
       this.feedbackEnabled = true;
       setTimeout(() => {
         this.feedbackEnabled = false;
-        this.person = null;
       }, 2000);
       // this.message = null;
     }

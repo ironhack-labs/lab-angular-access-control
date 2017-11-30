@@ -1,7 +1,7 @@
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" [ngClass]="{'is-processing': processing}">
   <div class="field" [ngClass]="{'has-error': feedbackEnabled &&  myPerson.errors}">
     <label>Person</label>
-    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" minlength="2"  required />
+    <input type="text" name="name" [(ngModel)]="newLog.name" #myPerson="ngModel" minlength="2"  required />
     <div *ngIf="feedbackEnabled && myPerson.errors">
       <p *ngIf="myPerson.errors.required" class="validation">person required</p>
       <p *ngIf="myPerson.errors.minlength" class="validation">person is too short</p>
@@ -10,7 +10,7 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && myMessage.errors}">
     <label>Message</label>
-    <textarea name="message" [(ngModel)]="message" #myMessage="ngModel" minlength="6"  required cols="30" rows="10"></textarea>
+    <textarea name="message" [(ngModel)]="newLog.message" #myMessage="ngModel" minlength="6"  required cols="30" rows="10"></textarea>
     <div *ngIf="feedbackEnabled && myMessage.errors">
       <p *ngIf="myMessage.errors.required" class="validation">message required</p>
       <p *ngIf="myMessage.errors.minlength" class="validation">message is too short</p>

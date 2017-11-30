@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
 
-import { AccessControlLogService } from './services/access-control-log.service';
+import { AccessControlLogService } from "./services/access-control-log.service";
 
-import { AppComponent } from './app.component';
-import { LogFormComponent } from './components/log-form/log-form.component';
+import { AppComponent } from "./app.component";
+import { LogFormComponent } from "./components/log-form/log-form.component";
 
 @NgModule({
   declarations: [
