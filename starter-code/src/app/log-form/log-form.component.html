@@ -1,0 +1,25 @@
+<h2>ACcess Form</h2>
+
+<form (ngSubmit)='accessSubmit()'>
+  <label for="access-name">NAME</label>
+  <input type="text" id="access-name" name="name" value="" [(ngModel)]="theAccessLog.name">
+  <br>
+
+  <label for="access-phone">Message</label>
+  <input type="tel" id="access-phone" name="message" value="" [(ngModel)]="theAccessLog.message">
+
+  <br>
+
+
+  <button> Save</button>
+
+</form>
+
+
+<ul>
+  <li *ngFor="let theaccess of accessThang.accessLogs">
+    {{theaccess.name}}
+      {{theaccess.message}}
+        {{theaccess.createdAt}}
+  </li>
+</ul>
