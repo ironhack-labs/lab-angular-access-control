@@ -1,0 +1,23 @@
+<form (ngSubmit)="logSubmit()">
+  <label for="name-input"> Enter your name: </label>
+  <input id="name-input" placeholder="e.g. Alejandro Roman"
+  name="name" [(ngModel)]="theAccessLog.name"/>
+  <br />
+  <label for="message-input"> Enter your message: </label>
+  <input id="message-input" placeholder="e.g. This is so cool"
+  name="name" [(ngModel)]="theAccessLog.message"/>
+  <button>Submit</button>
+</form>
+
+<ul>
+  <h2>Contact List</h2>
+
+  <ul>
+    <li *ngFor="let oneLog of accessThing.accessLogs">
+      {{ oneLog.name}}
+      <br />
+      {{ oneLog.message}}
+      <br />
+      {{ oneLog.date}}
+    </li>
+  </ul>
