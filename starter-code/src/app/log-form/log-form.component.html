@@ -1,0 +1,50 @@
+<h2> Access control form </h2>
+
+<form (ngSubmit)="addUserItem()" #myForm="ngForm" novalidate>
+
+  <label for="input-name"></label>
+  <input id="input-name" type="text" placeholder="e.g Dude"
+  [(ngModel)]="theItem.person" name="name"  required minlength = "6" maxlength="20" #myNameInput="ngModel"/>
+<!--
+  <div class="error" *ngIf="mynameInput.errors">
+    <p *ngIf="mynameInput.errors.required">
+      User name required.
+    </p>
+
+    <p*ngIf="mynameInput.errors.minlength">
+      User name cannot have less than 6 characters
+    </p>
+
+    <p *ngIf="myNameInput.errors.maxlength">
+      Username can't be longer than 20 characters.
+    </p>
+  </div> -->
+
+  <br/>
+
+  <label for="input-message"></label>
+  <input id="input-message" type="text" placeholder="e.g Doing something"
+  [(ngModel)]="theItem.message" name="message" required #myMessageInput="ngModel" />
+<!--
+  <div class="error" *ngIf="myMessageInput.errors">
+
+    <p *ngIf="myMessageInput.errors.required">
+    Password is required
+  </p>
+
+  </div>
+ -->
+  <br/>
+
+
+  <button > Save Log </button>
+
+</form>
+<!--
+<ul>
+  <li *ngFor=" let item of accessThang.accessLog">
+    <h3>{{item.person}}</h3>
+    <p>{{item.message}}</p>
+    <p>{{item.createdAt | date:"EEEE, MMMM d, y h:mm a"}}</p>
+  </li>
+</ul> -->
