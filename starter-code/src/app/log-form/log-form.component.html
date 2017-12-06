@@ -1,0 +1,14 @@
+<h2> Log Form </h2>
+
+<form id="form" #myForm="ngForm" (ngSubmit)="messageSubmit()">
+  <label for="person-input"> Enter Name of Person </label>
+  <input id="person-input" type="text" placeholder="e.g. Mathew Scrumbs" [(ngModel)]="logInfo.person" name="person" minlength="6"/>
+  <br />
+
+  <label for="message-input"> Enter Your Message </label>
+  <textarea id="message-input" type="text" placeholder="I shot the sherriff!" [(ngModel)]="logInfo.message" name="message" minlength="6"></textarea>
+  <br />
+  <br />
+
+  <button *ngIf="myForm.valid"> Submit </button>
+</form>
