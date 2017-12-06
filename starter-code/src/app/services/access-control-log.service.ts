@@ -18,7 +18,7 @@ export class AccessControlLogService {
 
   constructor() { }
 
-  addAccessItem(person, message) {
+  addAccessItem(newLogMessage: any) {
       this.logMessages.push(newLogMessage);
   }
 
