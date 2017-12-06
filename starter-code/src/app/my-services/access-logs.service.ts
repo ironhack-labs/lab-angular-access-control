@@ -6,7 +6,7 @@ export class AccessLogsService {
     {
       name:   "Alejandro Roman",
       message: "Picking up my helmet",
-      date: new Date()
+      date: Date()
     }
   ];
 
@@ -19,7 +19,7 @@ export class AccessLogsService {
   addAccessItem(theAccessLog:any) {
     const lastIndex = this.accessLogs.length - 1;
     const lastcontact = this.accessLogs[lastIndex];
-
+    theAccessLog.date = new Date()
     this.accessLogs.push(theAccessLog);
   }
 
