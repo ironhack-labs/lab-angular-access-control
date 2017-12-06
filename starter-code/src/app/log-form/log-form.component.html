@@ -1,0 +1,26 @@
+<h2> Access Log Form </h2>
+
+<form (ngSubmit)="logSubmit($event)" #myForm="ngForm" novalidate>
+  <label for="person-input"> Name </label>
+  <input id="person-input" type="text" placeholder="e.g. Dwayne Doe"
+    [(ngModel)]="newLogMessage.name" name="person" required #myPersonInput="ngModel"/>
+
+  <div class="error" *ngIf="myPersonInput.errors && myPersonInput.touched">
+    <p *ngIf="myPersonInput.errors.required"> Person's name is required. </p>
+  </div>
+
+  <br />
+
+
+  <label for="message-input"> Message </label>
+  <input id="message-input" type="text" placeholder="e.g. Doing nothing beneficial."
+    [(ngModel)]="newLogMessage.message" name="message" required #myMessageInput="ngModel" />
+
+  <div class="error" *ngIf="myMessageInput.errors && myMessageInput.touched">
+    <p *ngIf="myMessageInput.errors.required"> Person's activity description is required. </p>
+  </div>
+  <br />
+
+  <button *ngIf="myForm.valid"> Add New Log Message </button>
+
+</form>
