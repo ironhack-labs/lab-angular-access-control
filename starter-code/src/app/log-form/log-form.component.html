@@ -1,0 +1,28 @@
+<div class="container">
+  <form (ngSubmit)="callAddAccessItem($event)" #myForm="ngForm" novalidate>
+    <label for="accessPerson">Person</label>
+    <br>
+    <input id ="accessPerson" type="text" name="person" placeholder="Enter a person" [(ngModel)]="accessItems.person"
+    required #myPerson = "ngModel">
+    <br>
+    <div class="error" *ngIf="myPerson.errors && myPerson.touched">
+      <p *ngIf="myPerson.errors.required">
+        You need to add a person!
+      </p>
+    </div>
+    <br>
+    <label for="accessMessage">Message</label>
+    <br>
+    <input id="accessMessage" type="text" name="message" placeholder="Enter a message"[(ngModel)]="accessItems.message" required #myMessage = "ngModel">
+    <br>
+    <div class="error" *ngIf="myMessage.errors && myMessage.touched">
+      <p *ngIf="myMessage.errors.required">
+        You need to add a message!
+      </p>
+    </div>
+    <br>
+    <button *ngIf="myForm.valid">
+      Add Item
+    </button>
+  </form>
+</div>
