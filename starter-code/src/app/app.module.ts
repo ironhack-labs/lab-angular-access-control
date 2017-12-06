@@ -3,18 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AccessService } from './access.service';
+
 import { AppComponent } from './app.component';
+import { LogFormComponent } from './log-form/log-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [AccessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

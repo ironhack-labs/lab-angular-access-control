@@ -1,0 +1,12 @@
+.ng-touched .ng-invalid {
+  border-color: crimson;
+}
+
+.ng-touched .ng-valid {
+  border-color: green;
+}
+
+.error{
+  color: crimson;
+  font-weight: bold;
+}

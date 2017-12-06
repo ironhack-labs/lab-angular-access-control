@@ -1,0 +1,29 @@
+<h2> Log Form </h2>
+
+<form (ngSubmit)="logSubmit()" #myForm = "ngForm" novalidate>
+  <label for = "log-person"> Person </label>
+  <input id = "log-person" type = "text" placeholder = "e.g Josh"
+  [(ngModel)] = "thelockerRoom.person" name = "person" required minlength = "3" #myPersonInput = "ngModel"/>
+  <br>
+
+  <div class = "error" *ngIf = "myPersonInput.errors && myPersonInput.touched">
+    <p *ngIf = "myPersonInput.errors.required">Person name is required </p>
+    <p *ngIf = "myPersonInput.errors.minlength">Person name must have atleast 3 characters </p>
+  </div>
+
+<br/>
+
+
+  <label for = "log-message"> Message </label>
+  <input id = "log-message" type = "text" placeholder = "e.g hello"
+  [(ngModel)] = "thelockerRoom.message" name = "message" required minlength = "8" #myMessageInput = "ngModel"/>
+  <br>
+
+  <div class = "error" *ngIf = "myMessageInput.errors && myMessageInput.touched">
+    <p *ngIf = "myMessageInput.errors.required">Message is required </p>
+    <p *ngIf = "myMessageInput.errors.minlength">Message must have atleast 8 characters </p>
+  </div>
+  <br/>
+
+  <button>  Save this log </button>
+</form>
