@@ -6,11 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './component/homepage/homepage.component';
 import { PeopleService } from 'app/services/people.service';
+import { LogFormComponentComponent } from './component/log-form-component/log-form-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    LogFormComponentComponent
   ],
   imports: [
     BrowserModule,

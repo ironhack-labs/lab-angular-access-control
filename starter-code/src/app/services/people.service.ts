@@ -15,6 +15,7 @@ export class PeopleService {
   }
 
   addAccessItem(person, message) {
+    console.log(this.logMessages);
     return this.logMessages.push({person, message});
   }
 }
