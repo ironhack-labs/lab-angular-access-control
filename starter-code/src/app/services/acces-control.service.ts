@@ -9,7 +9,7 @@ logMessages: Array<{}> = [];
 
   addAccessItem(person: string, message: string){
     this.logMessages.push({person, message, createdAt: new Date()});
-    console.log('Log message created');
+    console.log('Log msessage created');
 
   }
 

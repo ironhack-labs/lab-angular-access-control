@@ -25,10 +25,16 @@ export class LogFormComponent implements OnInit {
     this.feedbackEnabled = true;
     if (form.valid) {
       this.processing = true;
-      console.log('here we submit the form');
       this.access.addAccessItem(this.person, this.message);
+
+      const logArray = this.access.getAccessLog();
+      logArray.forEach((element,index) => {
+        console.log(`${index+1}. ${element['person']}, created message: ${element['message']} `);
+      })
       // authService.login(this.username, this.password).
     }
+    this.feedbackEnabled = false;
+    this.processing = false;
   }
 }
 
