@@ -4,10 +4,16 @@ import {Message} from '../interfaces/message';
 @Injectable()
 export class AccessControlService {
 
-  logMessages: Message[];
-  newMessage: Message;
+  logMessages: Message[] = [];
+  newMessage: Message = {
+    person: '',
+    message: '',
+    createdAt: 0
+  };
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   getAccessLog(){
     return this.logMessages;
