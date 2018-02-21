@@ -1,0 +1,23 @@
+
+<form (ngSubmit) = "submitMessage(form)" #form = "ngForm" novalidate>  
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && personField.errors}">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" #personField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && personField.errors">
+      <p *ngIf="personField.errors.required" class="validation">Person required</p>
+    </div>
+  </div>
+  
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && messageField.errors}">
+    <label>Message</label>
+    <textarea name="message" cols="30" rows="10" [(ngModel)]="message" #messageField="ngModel" required></textarea>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">Message required</p>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<div *ngIf = "success">
+  <p>Registration was successful. Well done. Peace.</p>
+</div>
