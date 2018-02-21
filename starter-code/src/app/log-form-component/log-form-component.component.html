@@ -3,19 +3,13 @@
     <input type="text" name="person" [(ngModel)]="person"  #myPerson="ngModel"/>
   </p>
   <p> Message
-    <input type="text" name="message" [(ngModel)]="message"  #myMessage="ngModel" />
+    <input type="text" name="message" [(ngModel)]="message"  #myMessage="ngModel" minlength="6"/>
   </p>
   <button type="submit"> Add </button>
 </form>
 
-<!-- <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
-  <p class="error" [hidden]="!myPerson.errors">
-    Successful
-  </p>
-</div> -->
-
-<!-- <div *ngIf="myMessage.submitted">
-  <p>
-    Done
-  </p>
-</div> -->
+<div *ngIf="myMessage.errors && (myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors">
+      Message must be at least 6 characters long.
+    </p>
+  </div>
