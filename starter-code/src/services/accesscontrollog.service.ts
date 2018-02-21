@@ -12,11 +12,15 @@ export class AccessControlLogService {
         createdAt: this.createdAt
     }
     logMessages: Object[];
-    constructor() { }
+    constructor() {
+        this.logMessages= [];
+     }
 
     addAccessItem(person:String, message:String) {
         this.person= person;
         this.message=message;
+        let date= new Date;
+        this.logMessages.push({person, message, date})
     }
     getAccessLog():Object[]{
         return this.logMessages

@@ -17,5 +17,6 @@ export class SignupComponent implements OnInit {
     let{person, message} = myForm.value;
     this.messageLog.addAccessItem(person, message);
     console.log(`registro exitoso ${person} bien  ${message} mal`);
+    console.log(this.messageLog.logMessages)
   }
 }
