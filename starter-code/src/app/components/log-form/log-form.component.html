@@ -1,0 +1,34 @@
+<p>
+  log-form works!
+</p>
+
+<form (ngSubmit)="addAccessItem(form)" #form="ngForm" novalidate>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && personField.errors}">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" #personField="ngModel" required minlength="6" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && personField.errors">
+      <p *ngIf="personField.errors.required" class="validation">person required</p>
+      <p *ngIf="personField.errors.minlength" class="validation">person is too short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && messageField.errors}">
+    <label>Message</label>
+    <input type="text" name="message" [(ngModel)]="message" #messageField="ngModel" required minlength="6"  [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">message required</p>
+      <p *ngIf="messageField.errors.minlength" class="validation">message is too short</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Login</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    <div *ngIf="feedbackEnabled && form.valid">
+      <p class="validation"> registration was successful </p>
+    </div>
+    </div>
+  </div>
+</form>
