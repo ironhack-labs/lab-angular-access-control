@@ -29,6 +29,7 @@ export class LogFormComponent implements OnInit {
       this.accessControl.addAccessItem(this.person, this.message);
       this.processing = false;
       this.success = true;
+      console.log(this.accessControl.getAccessLog())
     } else {
       this.feedbackEnabled = true;
     }
