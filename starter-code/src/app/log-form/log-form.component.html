@@ -1,0 +1,24 @@
+<form (ngSubmit)="submitForm(logForm)" #logForm="ngForm">
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person"
+          #personTemplate="ngModel" minlength="4" />
+  </p>
+  <div *ngIf="personTemplate.errors && (personTemplate.dirty || personTemplate.touched)">
+    <p class="error" [hidden]="!personTemplate.errors.minlength">
+      Username must be at least 4 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"
+          #messageTemplate="ngModel" required />
+  </p>
+  <div *ngIf="messageTemplate.errors && (messageTemplate.dirty || messageTemplate.touched)">
+    <p class="error" [hidden]="!messageTemplate.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit"> signup </button>
+</form>
+
+<p *ngIf="sent">{{person}} {{message}}</p> 
+  
