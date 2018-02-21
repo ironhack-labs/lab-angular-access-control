@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AccessControlLog } from '../services/access.service';
 import { AppComponent } from './app.component';
+import { LogFormComponentComponent } from './log-form-component/log-form-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LogFormComponentComponent,
   ],
   imports: [
     BrowserModule,
