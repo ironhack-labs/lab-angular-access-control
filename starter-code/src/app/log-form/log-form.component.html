@@ -1,0 +1,23 @@
+<form (ngSubmit)="submitForm(myForm)"  #myForm="ngForm">
+
+<p> Person
+  <input type="person" #myPerson="ngModel" name="person" [(ngModel)]="person" required minlength="6" />
+</p>
+<div *ngIf = "myPerson.errors && (myPerson.touched)">
+  <p class="error" [hidden]="!myPerson.errors.minlength">
+    Person must be at least 6 characters long.
+  </p>
+  <p class="error" [hidden]="!myPerson.errors.required">
+    Person is required
+  </p>
+</div>
+
+<p> Message
+  <input type="text" name="message" [(ngModel)]="message" required />
+</p>
+
+
+<button type="submit"> Log </button>
+
+
+</form>
