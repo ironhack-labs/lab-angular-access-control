@@ -1,3 +1,18 @@
 <p>
   signup works!
 </p>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Person
+    <input type="text"  #myPerson="ngModel"  name="person" [(ngModel)]="person"  required minlength="6" />
+  </p>
+    <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+      <p class="error" [hidden]="!myPerson.errors.minlength">
+        Username must be at least 6 characters long.
+      </p>
+      </div>
+  
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> signup </button>
+</form>
