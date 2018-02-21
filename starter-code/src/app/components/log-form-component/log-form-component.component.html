@@ -1,0 +1,32 @@
+<form (ngSubmit)="handleAddAccess(form)" #form="ngForm" novalidate>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && personField.errors}">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" #personField="ngModel" required pattern='([a-z]|[A-Z])*'[disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && personField.errors">
+      <p *ngIf="personField.errors.required" class="validation">Person required</p>
+      <p *ngIf="personField.errors.pattern" class="validation">Person is invalid (only letters)</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && messageField.errors}">
+    <label>Message</label>
+    <input type="text" name="message" [(ngModel)]="message" #messageField="ngModel" required pattern='([a-z]|[A-Z])*' [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">Message required</p>
+      <p *ngIf="messageField.errors.pattern" class="validation">Message is invalid (only letters)</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type='submit' [disabled]="processing">Add</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+  </div>
+
+</form>
+
+<div class='success' *ngIf='added'>
+  <p>Your form was submitted</p>
+</div>
