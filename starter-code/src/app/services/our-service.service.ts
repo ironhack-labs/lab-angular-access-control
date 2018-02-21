@@ -9,15 +9,17 @@ export class AccessControLogService {
     createdAt: Date    
     }
 ];
-    newLogMessage: Object = {};
+    newLogMessage: Object = {
+
+    };
 
     constructor() { }
 
-    addAccessItem(person, message) {
+    addAccessItem(a) {
         console.log(`New message inserted`);
         this.logMessages.push(this.newLogMessage);
     }
-    
+
     getAccessLog() {
         console.log(`Here is the list of visitors`);
         return this.logMessages;
