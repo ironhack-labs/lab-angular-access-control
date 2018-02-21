@@ -1,0 +1,16 @@
+.form{
+  width: 300px;
+  margin: 0 auto;
+  background-color: rgb(186, 205, 206);
+  padding: 20px;
+  border-radius: 10px;
+}
+input, 
+button{
+  width: 100%;
+  display: block;
+  margin: 10px 0;
+  box-sizing: border-box;
+  height: 30px;
+  border-radius: 5px;
+}
