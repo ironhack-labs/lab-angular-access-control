@@ -5,16 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { AccessControlLogService } from './services/access-control-log.service';
+
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
+  declarations: [AppComponent],
+  imports: [BrowserModule, FormsModule, HttpModule],
+  providers: [AccessControlLogService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
