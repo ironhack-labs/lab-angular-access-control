@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AccessControlLogService {
-  logMessages: Array<object>;
+  logMessages: Array<any> = [];
   constructor() { }
 
   addAccessItem(person, message) {
