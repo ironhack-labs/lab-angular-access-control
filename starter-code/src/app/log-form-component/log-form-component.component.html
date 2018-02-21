@@ -1,0 +1,18 @@
+
+<form (ngSubmit)="submitForm(myForm)"  #myForm="ngForm">
+<p> Username
+  <input type="text" #myUsername="ngModel" name="username" [(ngModel)]="username" required minlength="10" />
+</p>
+<div *ngIf="myUsername.errors && (myUsername.touched)">
+  <p class="error" [hidden]="!myUsername.errors.minlength">
+    Username must be at least 6 characters long.
+  </p>
+  <p class="error" [hidden]="!myUsername.errors.required">
+    Username is required
+  </p>
+</div>
+<p> Message
+  <input type="text" name="message" [(ngModel)]="message" required />
+</p>
+<button type="submit"> signup </button>
+</form>
