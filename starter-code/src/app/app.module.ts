@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AccesControlService } from "./services/acces-control.service";
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -14,7 +16,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [AccesControlService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
