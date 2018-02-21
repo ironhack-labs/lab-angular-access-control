@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 
 import { AccessControlLogService }  from './services/access-control-log.service';
-import { HomepageComponent } from './pages/homepage/homepage.component'
+import { LogFormComponent } from './component/log-form/log-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    LogFormComponent,
+  
   ],
   imports: [
     BrowserModule,
