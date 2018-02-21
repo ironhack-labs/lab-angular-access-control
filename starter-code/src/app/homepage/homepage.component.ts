@@ -10,9 +10,11 @@ export class HomepageComponent implements OnInit {
   
   constructor( private accessLogService: AccessLogService ) { }
 
-  // Why is this not working? How do we test if App is working without a form?
-  // this.accessLogService.addAccessItem();
 
-  ngOnInit() { }
+  
+  ngOnInit() { 
+    this.accessLogService.addAccessItem('oscar', 'jana');
+
+  }
 
 }
