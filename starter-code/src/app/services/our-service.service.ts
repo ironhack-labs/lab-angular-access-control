@@ -2,13 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AccessControLogService {
-    logMessages: Array<Object> = [
-    {
-    person: String,
-    message: String,
-    createdAt: Date    
-    }
-];
+    logMessages: Array<Object> = [];
     newLogMessage: Object = {
 
     };
@@ -16,13 +10,14 @@ export class AccessControLogService {
     constructor() { }
 
     addAccessItem(a) {
+        console.log(this.logMessages)
         console.log(`New message inserted`);
-        this.logMessages.push(this.newLogMessage);
+        this.logMessages.push(a);
+        this.getAccessLog();
     }
 
     getAccessLog() {
-        console.log(`Here is the list of visitors`);
-        return this.logMessages;
+        console.log(this.logMessages);
     }
 }
 

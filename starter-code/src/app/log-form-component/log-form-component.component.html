@@ -1,3 +1,24 @@
-<p>
-  log-form-component works!
-</p>
+<div id="form-main">
+  <div id="form-div">
+<form class="form" id="form1" (ngSubmit)="addAccess(myForm)" #myForm="ngForm">
+  <p class="name"> Person
+    <input class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" id="name" type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required minlength="6" />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 6 characters long.
+    </p>
+  </div>
+  <p class="text"> Message
+    <input class="validate[required,length[6,300]] feedback-input" id="comment" type="message" name="message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      We need to know what the f**k you are doing!
+    </p>
+  </div>
+  <button id="button-blue" type="submit"> Add log </button>
+</form>
+</div>
+</div>
