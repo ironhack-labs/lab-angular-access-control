@@ -1,0 +1,21 @@
+<form (ngSubmit)="controlLog.addAccessItem(myperson,mymessage)" #myForm="ngForm">
+  <p> Username
+    <input type="text" name="person" [(ngModel)]="person"
+          #myperson="ngModel" minlength="4" />
+  </p>
+  <div *ngIf="myperson.errors && (myperson.dirty || myperson.touched)">
+    <p class="error" [hidden]="!myperson.errors.minlength">
+      Username must be at least 4 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"
+          #mymessage="ngModel" required />
+  </p>
+  <div *ngIf="mymessage.errors && (mymessage.dirty || mymessage.touched)">
+    <p class="error" [hidden]="!mymessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit"> signup </button>
+</form>
