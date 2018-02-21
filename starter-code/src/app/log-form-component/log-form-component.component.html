@@ -1,0 +1,15 @@
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person"  #myPerson="ngModel"/>
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"  #myMessage="ngModel" minlength="6"/>
+  </p>
+  <button type="submit"> Add </button>
+</form>
+
+<div *ngIf="myMessage.errors && (myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors">
+      Message must be at least 6 characters long.
+    </p>
+  </div>
