@@ -1,0 +1,30 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+
+  <i class="ion-android-bicycle"></i>
+  <h1>SPORT</h1>
+  <div class="i">
+    <input type="text" #myPerson="ngModel" name="person" [(ngModel)]="person" required minlength="2" placeholder="Person" />
+  </div>
+  <div class="i">
+    <input type="text" #myMessage="ngModel" name="message" [(ngModel)]="message" required minlength="50" placeholder="Message" />
+  </div>
+  <button type="submit"> Access </button>
+  <p class="success" [hidden]="!submitted">Login success</p>
+  <div *ngIf="myPerson.errors && (myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 2 characters long.
+    </p>
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person is required
+    </p>
+  </div>
+  <div *ngIf="myMessage.errors && (myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <p class="error" [hidden]="!myMessage.errors?.minlength">
+    Message must be at least 50 characters long.
+  </p>
+
+</form>
