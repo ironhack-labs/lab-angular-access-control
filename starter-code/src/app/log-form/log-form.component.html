@@ -1,0 +1,23 @@
+<div class="container entry-form">
+  <div class="row">
+    <div class="col-12">
+  <form (ngSubmit)="add()" #myForm="ngForm">
+  <p>Person
+    <input class='form-control' type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p>Message
+    <input class='form-control' type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit">Submit</button>
+</form>
+    </div>  
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>{{success}}</p>
+    </div>
+  </div>
+  
+</div>
+
+
