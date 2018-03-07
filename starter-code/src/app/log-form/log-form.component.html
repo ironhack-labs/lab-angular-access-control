@@ -1,0 +1,13 @@
+<form (ngSubmit)="addToLog(myForm)" #myForm="ngForm">
+  <p>Person
+    <input type="text" name="person" [(ngModel)]="person" required>
+  </p>
+  <p>Message
+    <input type="text" name="message" [(ngModel)]="message" required>
+  </p>
+  <button type="submit">Add To Log</button>
+</form>
+
+<div *ngIf="added === true">
+  <p>{{ lastPerson }} was added to the log!</p>
+</div>
