@@ -1,0 +1,20 @@
+<!-- Form to insert new access items in the Service array -->
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
+  <label class="label" for="person">Person</label>
+  <input class="txt" type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required />
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)" class="error-container">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person is required
+    </p>
+  </div>
+
+  <label class="label" for="message">Message</label>
+  <input class="txt" type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required />
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)" class="error-container">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+
+  <button class="btn" type="submit">Save</button>
+</form>
