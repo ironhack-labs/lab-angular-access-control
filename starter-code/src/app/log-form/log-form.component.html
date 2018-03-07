@@ -1,0 +1,16 @@
+<div class="container">  
+  <form (ngSubmit)="add(person, message)" #myForm="ngForm" novalidate id="contact">
+    <h3>Locker Sign In Form</h3>
+    <fieldset>
+      <input placeholder="Your name" name="person" type="text" tabindex="1" required autofocus [(ngModel)]="person"
+      #myName="ngModel">
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." name="message" [(ngModel)]="message"
+      #myMessage="ngModel" tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+  </form>
+</div>
