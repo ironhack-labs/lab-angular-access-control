@@ -6,12 +6,12 @@ export class AccessControlLog {
     constructor() {}
 
     addAccessItem( p, m ) {
-        const newUser = {
-            person:  p,
-            message: m,
-            createdAt: Date
-        };
-        this.logMessages.push(newUser);
+     
+        this.logMessages.push({
+            person: p ,
+            message: m ,
+            date: new Date()
+        });
     }
     getAccessLog() {
         return this.logMessages;
