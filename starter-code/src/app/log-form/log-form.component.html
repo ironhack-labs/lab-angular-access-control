@@ -1,0 +1,24 @@
+<!-- <form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm" novalidate> -->
+  <p> Person
+    <input type="text" name="username" [(ngModel)]="newVisit.username"
+          #myUsername="ngModel" required/>
+  </p>
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.required">
+      Person name is required.
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="password" [(ngModel)]="newVisit.password"
+          #myPassword="ngModel" required />
+  </p>
+  <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
+    <p class="error" [hidden]="!myPassword.errors.required">
+      Message is required.
+    </p>
+  </div>
+  <button type="submit" (click)="addAccess(newVisit.username, newVisit.password)"> Log Yourself</button>
+
+
+<!-- </form> -->
+  <button (click)="getHistory()">Log History</button>
