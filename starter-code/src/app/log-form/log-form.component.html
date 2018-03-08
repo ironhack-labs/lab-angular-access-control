@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<form>
+  <div>
+  <label for="myPerson">Person</label>
+  <input type="text" name="person" [(ngModel)]="p" #myPerson="ngModel" required class="validate" >
+  
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Person is required 
+    </p>
+  </div>
+</div>
+
+<div>
+  <label for="myMessage">Message</label>
+  <input type="text" name="message" [(ngModel)]="m" #myMessage="ngModel" required class="validate"> 
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required 
+    </p>
+  </div>
+  <button (click)="addAccess()">Submit</button>
+  <p>{{success}}</p>
+  </div>
+</form>
+
