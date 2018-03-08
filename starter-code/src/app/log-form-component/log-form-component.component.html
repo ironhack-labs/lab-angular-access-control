@@ -1,0 +1,25 @@
+<h2>Formulario: </h2>
+<form (ngSubmit)="logService.addAccessItem(myForm)" #myForm="ngForm" novalidate>
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person"
+          #myPerson="ngModel" required/>
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Este campo está requerido!
+    </p>
+  </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Este campo está requerido!
+    </p>
+  </div>
+  <button type="submit"> Send </button>
+</form>
+
+
+
