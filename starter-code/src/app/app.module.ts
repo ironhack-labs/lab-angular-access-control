@@ -17,7 +17,7 @@ import { AccessControlLog } from './shared/services/AccessControlLog.service';
     FormsModule,
     HttpModule
   ],
-  providers: [AccessControlLog],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

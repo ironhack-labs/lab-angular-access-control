@@ -16,6 +16,7 @@ export class AccessControlLog {
       message: message,
       createdAt: new Date()
     }
+    console.log(`Message created: person= ${newAccess.person} message= ${newAccess.message} createdAt= ${newAccess.createdAt}`);
     this.logMessages.push(newAccess);
   }
 
