@@ -4,6 +4,7 @@ import { Access } from '../models/access.model';
 @Injectable()
 export class AccessControlLog {
   logMessages: Array<Access> = [];
+  logMessage: Access;
   constructor() { }
 
   getAccessLog(): Array<Access> {
@@ -11,13 +12,19 @@ export class AccessControlLog {
   }
 
   addAccessItem(person: string, message: string): void {
-    const newAccess = {
-      person: person,
-      message: message,
-      createdAt: new Date()
-    }
-    console.log(`Message created: person= ${newAccess.person} message= ${newAccess.message} createdAt= ${newAccess.createdAt}`);
-    this.logMessages.push(newAccess);
+    this.logMessage = new Access();
+    this.logMessage.person = person;
+    this.logMessage.message= message;
+    this.logMessage.createdAt= new Date();
+
+    this.logMessages.push(this.logMessage);
+    console.log(this.logMessages.length);
+  }
+
+  showLogsOnConsole(): void {
+    this.logMessages.forEach(log => {
+      console.log(log);
+    });
   }
 
 }

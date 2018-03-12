@@ -23,6 +23,7 @@ export class LogFormComponent implements OnInit {
   onSubmitAccessForm() {
     this.accessControlLog.addAccessItem(this.access.person, this.access.message);
     this.result = `Person: ${this.access.person} and message: ${this.access.message} created`;
+    this.accessControlLog.showLogsOnConsole();
   }
 
 }
