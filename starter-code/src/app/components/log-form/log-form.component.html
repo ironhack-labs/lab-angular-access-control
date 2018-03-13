@@ -1,0 +1,23 @@
+<form #myForm="ngForm" novalidate>
+  <b>Person: </b> 
+  <input #person="ngModel" name="name" [(ngModel)]="name" type="text" minlength="3" required>
+
+  <b>Message: </b> 
+  <input #message="ngModel" name="mess" [(ngModel)]="mess" type="text" minlength="3" required>
+  <input [disabled]="!myForm.valid" type="submit" value="¡Submit!" 
+  (click)="addAccessItem(person.value, message.value); getAccessLog(); show=true">
+</form>
+
+<div *ngIf="person.errors && (person.dirty || person.touched)">
+  <p class="error" [hidden]="!person.errors.minlength">
+    Username must be at least 3 characters long.
+  </p>
+</div>
+
+<div *ngIf="message.errors && (message.dirty || message.touched)">
+  <p class="error" [hidden]="!message.errors.required">
+    message is required
+  </p>
+</div>
+
+<div *ngIf="show===true"> <h2>Registration Success! </h2></div>
