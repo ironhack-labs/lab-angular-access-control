@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+

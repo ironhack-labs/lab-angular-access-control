@@ -1,0 +1,34 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" class="log-form flex-container flex-column" novalidate>
+  <div class="flex-container flex-column mb-20 field-container">
+    <input class="input" type="text" name="person" id="person" placeholder="Name" [(ngModel)]="person" #myPerson="ngModel" minlength="2" />
+  </div>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Please, write a correct name with at least two characters.
+    </p>
+  </div>
+
+  <div class="flex-container flex-column field-container">
+    <textarea class="input" name="message" id="message" cols="30" rows="10" placeholder="Message" [(ngModel)]="message" #myMessage="ngModel" required minlength="10" ></textarea>
+  </div>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p [hidden]="!myMessage.errors.required">
+      The message is required (10 characters at least).
+    </p>
+  </div>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p [hidden]="!myMessage.errors.minlength">
+      You have to write at least 10 characters.
+    </p>
+  </div>
+
+  <div *ngIf="myForm.form.invalid">
+    <p>The button will appear once the form is correct.</p>
+  </div>
+
+  <button *ngIf="myForm.form.valid" type="submit">SEND</button>
+
+  <div *ngIf="success">
+    <p>💪🏽 Thank's {{ person }}, your registration was successful!</p>
+  </div>
+</form>
