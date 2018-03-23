@@ -1,0 +1,22 @@
+
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm" novalidate>
+  Person:
+  <br>
+  <input type="text" name="person" [(ngModel)]="user.person"  #myPerson="ngModel" minlength="6" placeholder="person">
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+  </div>
+  <br> Message
+  <br>
+  <input type="text" name="message" [(ngModel)]="user.message"#myMessage="ngModel" minlength="6"  placeholder="message" >
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.minlength">
+      You must add a message.
+    </p>
+  </div>
+  <br>
+  <br>
+  <button type="submit">Add person </button>
+</form>
