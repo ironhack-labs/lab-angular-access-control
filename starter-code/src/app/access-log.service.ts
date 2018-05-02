@@ -3,20 +3,15 @@ import { User } from '../app/user-interface';
 
 @Injectable()
 export class AccessLogService {
-  logMessages: Array<User>=[];
+  logMessages: Array<User> = [];
 
   constructor() {}
 
-  addAccessItem = (person, message) => {
-    let newRegister = {
-      person,
-      message,
-      createdAt: new Date()
-    };
-    this.logMessages.push(newRegister);
-  }
+  addAccessItem = (person, message, createdAt = new Date()) => {
+    this.logMessages.push({ person, message, createdAt });
+    console.log('Register Added:');
+    alert('Register Added');
+  };
 
-  getAccessLog = () => this.logMessages;
-
-
+  getAccessLog = () => console.log(this.logMessages)
 }
