@@ -1,0 +1,30 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && nameField.errors}">
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="name" #nameField="ngModel" required minlength="6" [disabled]="processing" />
+    <div *ngIf="feedbackEnabled && nameField.errors">
+      <p *ngIf="nameField.errors.required" class="validation">name required</p>
+      <p *ngIf="nameField.errors.minlength" class="validation">name is too short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && messageField.errors}">
+    <label>Message</label>
+    <input type="text" name="message" [(ngModel)]="message" #messageField="ngModel" required minlength="6" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">message required</p>
+      <p *ngIf="messageField.errors.minlength" class="validation">message is too short</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Login</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+    <div *ngIf="feedbackEnabled && processing">
+      <p class="validation">finally!!!</p>
+    </div>
+  </div>
+</form>

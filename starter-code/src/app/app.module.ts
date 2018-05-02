@@ -1,20 +1,26 @@
+// -- Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// -- Components
 import { AppComponent } from './app.component';
+import { AccessControlLogService } from './services/access-control-log.service';
+import { LogFormComponentComponent } from './component/log-form-component/log-form-component.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, LogFormComponentComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AccessControlLogService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule { }
+export class AppModule {}
