@@ -1,0 +1,13 @@
+<p>
+  log-form-component works!
+</p>
+
+<form (ngSubmit) = "addAccessItem(myForm)" #myForm = "ngForm">
+  <input name = "person" type="text" placeholder="Your name" [(ngModel)]="person" required>
+  <input name = "message" type="text" placeholder="Write here your message" [(ngModel)]="message" required>
+<button type="submit" (click)="displayText()">Submit!</button>
+<div >
+  <p [hidden]=isVis >You submitted some info!</p>
+
+</div>
+</form>
