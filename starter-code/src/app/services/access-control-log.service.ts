@@ -13,8 +13,10 @@ export class AccessControlLog {
   getAccessLog() {
     return this.logMessages;
   }
-  addAccessItem(person, message) {
-    this.logMessages.push({ person, message, createdAt: new Date() });
+  addAccessItem(form) {
+    form.createdAt = new Date() ;
+    this.logMessages.push(form);
+    console.log(`Usuario creado ${form.username}`);
   }
 
 }
