@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<header id="site-header">
+  <div class="container">
+    
+    <nav class="site-nav">
+      <a [routerLink]="['/']">Home</a>
+    </nav>
+  </div>
+</header>
+
+<div id="site-main" class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer id="site-footer">
+  <div class="container">
+    nice footer
+  </div>
+</footer>
