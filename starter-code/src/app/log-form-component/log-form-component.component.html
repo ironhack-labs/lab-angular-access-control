@@ -1,0 +1,9 @@
+<p>
+  log-form-component works!
+</p>
+
+<form (ngSubmit)="signUp(myForm.value)" #myForm="ngForm" >
+  <input name="person" placeholder="Username" type="text" ngModel>
+  <input name="message" placeholder="message" type="text"  ngModel>
+  <button>Enviar Mensaje</button>
+</form>
