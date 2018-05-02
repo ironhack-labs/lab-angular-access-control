@@ -19,7 +19,9 @@ export class LockerControlService {
 
   addAccessItem(myForm){
     console.log(myForm)
-    //this.logMessages.push({person, message})
+    myForm.resetForm()
+    this.logMessages.push(myForm)
+    console.log(this.logMessages)
   }
 
 }
