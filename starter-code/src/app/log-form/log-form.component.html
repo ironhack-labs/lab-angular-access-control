@@ -6,13 +6,7 @@
 <button type="submit">Add</button>
 </form>
 
-<ul>
-  <li *ngFor="let susanita of susanitas">
-    <p>Name: {{susanita.person}}</p>
-    <p>Message: {{susanita.message}}</p>
-    <p>Created At: {{susanita.createdAt}}</p>
-  </li>
-</ul>
+<h2 *ngIf="successfulRegister">Registration was susana</h2>
 
 
 

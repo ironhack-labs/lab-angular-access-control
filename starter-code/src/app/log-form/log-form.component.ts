@@ -10,8 +10,7 @@ import {
   providers: [ServisioSusanaService]
 })
 export class LogFormComponent implements OnInit {
-
-  susanitas: Array<Susana> = [];
+  successfulRegister: boolean = false;
   constructor(private susanita: ServisioSusanaService) {}
   ngOnInit() {}
 
@@ -20,6 +19,6 @@ export class LogFormComponent implements OnInit {
     const person = myForm.person;
     const message = myForm.message;
     this.susanita.addAccessItem(person, message);
-    this.susanitas = this.susanita.getAccessLog();
+    this.successfulRegister = true;
   }
 }

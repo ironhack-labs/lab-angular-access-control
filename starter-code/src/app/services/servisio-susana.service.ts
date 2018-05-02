@@ -1,8 +1,8 @@
 import { Injectable } from "@angular/core";
 export interface Susana {
-  person: String,
-  message: String,
-  createdAt: Date
+  person: String;
+  message: String;
+  createdAt: Date;
 }
 @Injectable()
 export class ServisioSusanaService {
@@ -13,7 +13,7 @@ export class ServisioSusanaService {
       person,
       message,
       createdAt: new Date()
-    }
+    };
     this.susanArray.push(item);
   }
 
