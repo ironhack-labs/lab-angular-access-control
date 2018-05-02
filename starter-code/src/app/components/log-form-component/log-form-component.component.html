@@ -1,0 +1,11 @@
+
+  <form (submit)="handleSubmit(form)" #form="ngForm">
+   <label>Name</label>
+   <input type="text" [(ngModel)]="name" name="name">
+   <label>Message</label>
+   <input type="text" [(ngModel)]="message" name="message">
+  
+   <button type="submit">Log Data</button>
+  </form>
+
+
