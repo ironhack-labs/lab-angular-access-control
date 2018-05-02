@@ -1,0 +1,32 @@
+
+  <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+  
+    <div class="field" [ngClass]="{'has-error': feedbackEnabled && person.errors}">
+      <label>Person</label>
+      <input type="text" name="person" [(ngModel)]="access.person" #person="ngModel" required minlength="6" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && person.errors">
+        <p *ngIf="person.errors.required" class="validation">Person required</p>
+        <p *ngIf="person.errors.minlength" class="validation">Person is too short</p>
+      </div>
+    </div>
+    <div class="" [ngClass]="{'has-error': feedbackEnabled && person.errors}">
+      <label>Message</label>
+      <input type="text" name="message" [(ngModel)]="access.message" #message="ngModel" required minlength="6" [disabled]="processing"/>
+      <div *ngIf="feedbackEnabled && message.errors">
+        <p *ngIf="message.errors.required" class="validation">Message required</p>
+        <p *ngIf="message.errors.minlength" class="validation">Message is too short</p>
+      </div>
+    </div>
+  
+    <div class="field submit">
+      <button type="submit" [disabled]="processing" (click)="getFullList()">Send</button>
+      <div *ngIf="feedbackEnabled && form.invalid">
+        <p class="validation">There are errors in the form, please review the s</p>
+      </div>
+    </div>
+  </form>
+  
+  <div class="counter">
+    <h1>{{personName}} was added to the database</h1>
+    <h3>There are {{logQtty}} in the database</h3>
+  </div>
