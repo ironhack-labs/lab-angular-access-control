@@ -18,8 +18,9 @@ export class LogFormComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem() {
+  addItem(myForm) {
     this.accessLog.addAccessItem(this.person, this.message);
     this.saved = true;
+    myForm.reset();
   }
 }

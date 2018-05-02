@@ -19,6 +19,7 @@ export class AccessControlLogService {
       message,
       createdAt: new Date()
     })
+    console.log(this.logMessages);
   }
 
   getAccessLog() {
