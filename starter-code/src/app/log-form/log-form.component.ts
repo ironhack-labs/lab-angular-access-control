@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { AccessControlLog } from '../services/access-control-log.service';
 
 @Component({
@@ -18,6 +18,7 @@ export class LogFormComponent implements OnInit {
 
   formulario(form) {
     this.accessControl.addAccessItem(form);
+    console.log(this.accessControl.getAccessLog());
   }
 
 }

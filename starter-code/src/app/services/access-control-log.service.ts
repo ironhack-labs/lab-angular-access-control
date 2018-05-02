@@ -16,6 +16,7 @@ export class AccessControlLog {
   addAccessItem(form) {
     form.createdAt = new Date() ;
     this.logMessages.push(form);
+    //usuarios añadidos//
     console.log(`Usuario creado ${form.username}`);
   }
 
