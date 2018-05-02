@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LogFormComponent } from './log-form/log-form.component';
-import { AccessControlLogService } from './access-control-log.service';
+import { ToLogInService } from './to-log-in.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { AccessControlLogService } from './access-control-log.service';
     FormsModule,
     HttpModule
   ],
-  providers: [AccessControlLogService],
+  providers: [ToLogInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
