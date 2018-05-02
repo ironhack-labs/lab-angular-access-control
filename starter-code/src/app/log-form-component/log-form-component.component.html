@@ -1,0 +1,6 @@
+<form (ngSubmit)="addItem(myForm)" #myForm="ngForm" ngNativeValidate>
+  <input type="text" placeholder="person" name="person" [(ngModel)]="person" #myPerson="ngModel">
+  <input type="text" placeholder="message" name="message" [(ngModel)]="message" #myMessage="ngModel">
+  <button>Send</button>
+  <p [hidden]="!saved">Success</p>
+</form>

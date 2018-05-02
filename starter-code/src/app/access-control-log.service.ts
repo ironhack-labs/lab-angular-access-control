@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
-export class AccessControlLogService {
-
-  logMessages: Array<Object> = [];
+interface User {
   person: string;
   message: string;
   createdAt: Date;
+}
+
+@Injectable()
+export class AccessControlLogService {
+
+  logMessages: Array<User> = [];
 
   constructor() { }
 
