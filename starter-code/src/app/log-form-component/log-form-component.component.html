@@ -1,0 +1,26 @@
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+  <p> Username
+    <input type="text" name="username" [(ngModel)]="username" #myUsername="ngModel" minlength="6"  />
+  </p>
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+    </div>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Password is required
+    </p>
+    </div>
+  <button type="submit"> Send Message </button>
+  <div [ngClass]="{alertaActiva:alertaActiva}"> Se ha añadido correctamente</div>
+</form>
+
+ <li *ngFor="let miLog of logMessages">
+   {{miLog.person}}<br>
+   {{miLog.message}}
+ </li>
+
