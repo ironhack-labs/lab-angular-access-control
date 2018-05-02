@@ -1,0 +1,5 @@
+<form (ngSubmit)="saveLog()" #myForm="ngForm" ngNativeValidate>
+  <input name="person" placeholder="person" [(ngModel)]="person" required>
+  <input name="message" placeholder="message" [(ngModel)]="message" required>
+  <button>Log</button>
+</form>
