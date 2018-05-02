@@ -1,0 +1,18 @@
+<form (ngSubmit)="susanitaForm(myForm.value)" #myForm="ngForm">
+<label for="">Person</label>
+<input name="person" type="text" [(ngModel)]="person">
+<label for="">Message</label>
+<input name="message" type="text" [(ngModel)]="message">
+<button type="submit">Add</button>
+</form>
+
+<ul>
+  <li *ngFor="let susanita of susanitas">
+    <p>Name: {{susanita.person}}</p>
+    <p>Message: {{susanita.message}}</p>
+    <p>Created At: {{susanita.createdAt}}</p>
+  </li>
+</ul>
+
+
+
