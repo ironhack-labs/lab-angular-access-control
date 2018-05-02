@@ -1,0 +1,12 @@
+<p>
+  log-form works!
+</p>
+
+<form (ngSubmit) = "addItem(myForm)" #myForm = "ngForm" ngNativeValidate> 
+<label for="name">Person</label>
+<input name= "person" type="text" [(ngModel)]= "person" minlength="6">
+<br>
+<label for="message">Message</label>
+<input name="message" type="text" [(ngModel)]= "message" required>
+<button type="submit">Submit</button>
+</form>
