@@ -19,6 +19,7 @@ message:string
 addItem(myForm){
 this.theAccess.addAccessItem(this.person, this.message)
 alert("Registration Successfull");
+myForm.resetForm()
 }
 
 }
