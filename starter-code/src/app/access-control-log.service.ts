@@ -22,6 +22,4 @@ getAccessLog() {
 addAccessItem(person, message) {
 this.logMessages.push({person, message})
 }
-
-
 }
