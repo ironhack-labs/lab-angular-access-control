@@ -13,10 +13,15 @@ export class LogFormComponentComponent implements OnInit {
 
   ngOnInit() {}
 
-  addUser(values) {
+  addUser(form) {
     this.registration = this.accessControlLogService.addAccessItem(
-      values.person,
-      values.message
+     form.value.person,
+      form.value.message
     );
+    form.reset()
+  }
+
+  showForm() {
+    this.registration = !this.registration;
   }
 }

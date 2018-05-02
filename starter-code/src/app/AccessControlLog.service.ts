@@ -15,7 +15,9 @@ export class AccessControlLogService {
 
   addAccessItem(person, message) {
     this.logMessages.push({ person, message, createdAt: new Date() });
+    person = ""
     console.log("REGISTRATION SUCCESSFUL");
+    console.log(this.getAccessLog())
     return false
   }
   getAccessLog() {
