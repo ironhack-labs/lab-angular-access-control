@@ -1,0 +1,17 @@
+
+
+<form (ngSubmit) = "addAccessItem(myForm)" #myForm = "ngForm">
+  <input name = "person" type="text" placeholder="Your username" [(ngModel)]="person" #myUsername="ngModel" minlength="6">
+  <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+    <p class="error" [hidden]="!myUsername.errors.minlength">
+      Username must be at least 6 characters long.
+    </p>
+  </div>
+
+  <input name = "message" type="text" placeholder="Write here your message" [(ngModel)]="message" required>
+<button type="submit" (click)="displayText()">Submit!</button>
+<div >
+  <p [hidden]=isVis >You submitted some info!</p>
+
+</div>
+</form>
