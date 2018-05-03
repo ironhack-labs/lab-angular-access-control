@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccessComponent } from './access/access.component';
 
 @Component({
   selector: 'app-root',

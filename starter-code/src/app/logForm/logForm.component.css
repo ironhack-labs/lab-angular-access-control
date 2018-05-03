@@ -1,0 +1,39 @@
+.form__container {
+    width: 50%;
+    margin: 4rem auto;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+    background: rgba(0,0,0,0.4);
+    color: rgb(250, 203, 73);
+    border-radius: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+}
+form > * {
+    display: flex;
+   justify-content: space-around;
+
+}
+form button{
+    width: 20%;
+    background: #333;
+    color: rgb(250, 203, 73);
+    transition: all 0.3s ease-in;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+form button:hover{
+    background: rgb(250, 203, 73);
+    color:black;
+}
+input {
+    border-radius: 4px;
+    padding: 3px 7px;
+}
