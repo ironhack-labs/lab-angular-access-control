@@ -1,0 +1,15 @@
+
+<form (submit)="handleSubmit(form)" #form="ngForm">
+
+  <div>
+    <label>name</label><br>
+    <input type="text" [(ngModel)]="name" name="name">
+  </div>
+  <div>
+    <label>message</label><br>
+    <input type="text" [(ngModel)]="message" name="message">
+  </div>
+
+  <button type="submit">Submit</button>
+
+</form>
