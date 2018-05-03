@@ -6,8 +6,8 @@
 
 After this lesson, you will be able to:
 
-- Create an angular service to share information with all the components in your application.
-- Create an angular form to insert new data in the service.
+- Create an Angular service to share information with all the components in your application.
+- Create an Angular form to insert new data in the service.
 
 ## Requirements
 
@@ -20,13 +20,13 @@ Upon completion, run the following commands:
 
 ```bash
 $ git add .
-$ git commit -m"done"
+$ git commit -m "done"
 $ git push origin master
 ```
 
-Navigate to your repo and create a Pull Request -from your master branch to the original repository master branch.
+Navigate to your repo and create a pull request from your master branch to the original repository master branch.
 
-In the Pull Request name, add your campus, name, and last name separated by a dash "-".
+In the pull request name, add your campus, name, and last name separated by a dash "-".
 
 ## Deliverables
 
@@ -38,7 +38,7 @@ We have been hired by a local sports club to create a system that allows the man
 
 ### Iteration 1: Service creation
 
-First of all, we are going to create an Angular Service to keep our access log. We will use an Array of objects to do that. In this array, each object will store the following information:
+First of all, we are going to create an Angular service to keep our access log. We will use an array of objects to do that. In this array, each object will store the following information:
 
 - `person`, a string indicating who is accessing the locker room.
 - `message`, a string to indicate what they are doing in the locker room.
@@ -65,9 +65,9 @@ We will also add two different methods to interact with the array defined in the
   - `message`.
 - Define a `getAccessLog()` method, that returns the array of objects.
 
-### Iteration 2: Form Component
+### Iteration 2: Form component
 
-We are going to need a form to insert new access items in the Service array. We are going to create a `LogFormComponent` component to have all the form functionality on it. The form will have two different fields: `person` and `message`.
+We are going to need a form to insert new access items in the service array. We are going to create a `LogFormComponent` component to have all the form functionality on it. The form will have two different fields: `person` and `message`.
 
 Once the component is created, we have to add the Service as a provider, so we can interact with the methods we created. When the form is submitted, we have to call the `addAccessItem()` method in the service to add a new element to the array.
 
@@ -85,7 +85,7 @@ Once the component is created, we have to add the Service as a provider, so we c
 
 ### Iteration 3: Show the registers
 
-The access log information is supposed to be secret. No one will be able to see the whole log. But we want to be sure that everything is working fine, so we have to show the whole list of logs somehow.
+The access log information is supposed to be secret. No one will be able to see the whole log. But we want to be sure that everything is working fine, so we have to show the whole list of logs.
 
 After a person registers, we will show the list in the browser's console. It's easy, you have to iterate over all the elements in the array and show the information with `console.log`.
 
