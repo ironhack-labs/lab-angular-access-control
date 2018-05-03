@@ -1,0 +1,18 @@
+<h1> LOCKER ROOM </h1>
+<div [hidden]="!registration">
+<form (ngSubmit)="addUser(myForm)" #myForm="ngForm" ngNativeValidate>
+  Username:
+  <input type="text" name="person" [(ngModel)]="person" placeholder="person" required>
+  <br>
+     Message:
+  <input type="message" name="message" [(ngModel)]="message" placeholder="message"required>
+  <br>
+  <button type="submit" > ACCESS </button>
+</form>
+</div>
+
+<div [hidden]="registration">
+    <p >REGISTRATION OK</p>
+    <button type="button" (click)="showForm()">NEW ACCESS</button>
+</div>
+
