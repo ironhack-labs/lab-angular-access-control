@@ -1,0 +1,14 @@
+
+<form #myForm="ngForm" (ngSubmit)="submitForm()">
+    <p>
+      <input type="text" name="person" [(ngModel)]="form.person"   placeholder="Person" required>
+    </p>
+    <p>
+      <input type="text" name="message" [(ngModel)]="form.message"   placeholder="Message" required>
+    </p>
+    <p>
+      <input type="submit">
+    </p>
+  </form>
+ <!-- {{}}
+ {{}} -->
