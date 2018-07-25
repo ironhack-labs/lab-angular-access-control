@@ -1,0 +1,29 @@
+<form (ngSubmit)="add(myForm)" #myForm="ngForm">
+   <p>
+     Name: 
+     <input type="text" name="name" [(ngModel)]="person" #myName="ngModel"  required>
+   </p>
+  
+   <div *ngIf="myName.errors && (myName.dirty || myName.touched)">
+     <p class="error" [hidden] = "!myName.errors.required">Name is required.</p>
+   </div>
+  
+   <p>
+     Message: 
+     <textarea type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" rows="10" cols="50" required></textarea>
+   </p>
+  
+   <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+     <p class="error" [hidden] = "!myMessage.errors.required">Message is required.</p>
+   </div>
+  
+   <button type="submit" id="submit">Access</button>
+   <p *ngIf="!person && !message">{{success}}</p>
+  </form>
+  
+  <!-- <div *ngFor="let msg of user">
+   <p>{{msg.person}}</p>
+   <p>{{msg.message}}</p>
+   <p>{{msg.createdAt}}</p>
+  </div>  -->
+ 
