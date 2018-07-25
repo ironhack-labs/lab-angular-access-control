@@ -1,0 +1,11 @@
+
+<form (ngSubmit)="addAccesItem(person,message)" #myForm="ngForm" ngNativeValidate>
+  <p> Person</p>
+    <input type="text" name="person" [(ngModel)]="person" required />
+  
+  <p> Message</p>
+    <input type="text" name="message" [(ngModel)]="message" required />
+  
+  <button type="submit"> submit</button>
+
+</form>
