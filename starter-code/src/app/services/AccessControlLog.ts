@@ -19,6 +19,7 @@ export class AccessControlLog{
      })
    }
    getAccessLog(){
+     console.log(this.logMessages);
      return this.logMessages;
    }
 }
