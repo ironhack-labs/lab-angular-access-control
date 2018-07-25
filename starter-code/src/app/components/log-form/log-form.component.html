@@ -1,0 +1,17 @@
+<p>
+  log-form works!
+</p>
+
+<form (ngSubmit)="addAccessItemForm.valid && handleAddItem()" #addAccessItemForm="ngForm">
+  <div class="field">
+    <label for="person">Person:</label>
+    <input type="text" [(ngModel)]="person" name="person" #personField="ngModel" required minlength="5">
+    <p *ngIf="addAccessItemForm.submitted && personField.invalid">Not valid</p>
+  </div>
+  <div class="field">
+    <label for="message">Message:</label>
+    <input type="text" [(ngModel)]="message" name="message" #messageField="ngModel" required minlength="10">
+    <p *ngIf="addAccessItemForm.submitted && messageField.invalid">Not valid</p>
+  </div>
+  <button type="submit" [disabled]="addAccessItemForm.invalid">submit</button>
+</form>
