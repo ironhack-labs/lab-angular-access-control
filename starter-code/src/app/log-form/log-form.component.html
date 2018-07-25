@@ -1,0 +1,23 @@
+<h3>Form</h3>
+
+<form (ngSubmit)="service.addAccessItem(person, message)" #myForm="ngForm">
+  <p> Person
+    <input type="text" name="Person" [(ngModel)]="person"
+          #myPerson="ngModel" minlength="6" />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 6 characters long.
+    </p>
+  </div>
+  <p> Message
+    <input type="Message" name="Message" [(ngModel)]="message"
+          #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button type="submit"> submit </button>
+</form>
