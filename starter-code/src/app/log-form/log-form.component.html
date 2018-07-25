@@ -1,0 +1,32 @@
+<h1>FORM</h1>
+
+<!-- <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> person
+    <input type="text" name="person" [(ngModel)]='person' required>
+  </p>
+  <p> message
+    <textarea type="text" name="message" rows="4" cols="50" [(ngModel)]='message' required>
+       </textarea>
+  </p>
+  <button (click) = 'addAccessItem(person,message)' type="submit"> signup </button>
+</form> -->
+
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" minlength="6" required>
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.minlength">
+      Person must be at least 6 characters long.
+    </p>
+  </div>
+  <p> Message
+    <textarea type="text" name="message" [(ngModel)]="message" #myMessage="ngModel" rows="4" cols="50"  required ></textarea>
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.required">
+      Message is required
+    </p>
+  </div>
+  <button (click)= access.addAccessItem(person,message) type="submit"> signup </button>
+</form>
