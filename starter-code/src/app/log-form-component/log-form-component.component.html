@@ -1,0 +1,25 @@
+<form (ngSubmit)="submitForm(accessForm)" #accessForm="ngForm" ngNativeValidate>
+  <p> Person
+    <input type="text" class="input" name="person" [(ngModel)]="person" minlength="6" #myPerson="ngModel" required />
+  </p>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+   <p class="error" [hidden]="!myPerson.errors.minlength && !myPerson.errors.required">
+     Username must be at least 6 characters long.
+   </p>
+ </div>
+  <p> Message
+    <input type="text" class="input" name="message" [(ngModel)]="message" minlength="4" #myMessage="ngModel" required />
+  </p>
+  <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
+    <p class="error" [hidden]="!myMessage.errors.minlength && !myMessage.errors.required">
+      Message is required and must be at least 4 characters long.
+    </p>
+  </div>
+  <div *ngIf="accessForm.submitted">
+    <p>
+      Message correctly submitted
+    </p>
+  </div>
+
+  <button type="submit"> post </button>
+</form>
