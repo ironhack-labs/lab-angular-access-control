@@ -1,0 +1,21 @@
+<h1>Post message</h1>
+
+<form #postMessage="ngForm">
+
+  <div class="field">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" required minlength="1" />
+  </div>
+
+  <div class="field">
+    <label>Message</label>
+    <input type="text" name="message" [(ngModel)]="message" required minlength="10" />
+  </div>
+
+  <div class="field submit">
+    <button type="submit" (click)="handleAddItem()" [disabled]="postMessage.invalid">Post message</button>
+  </div>
+
+  <p *ngIf="logMessage">Post completed</p>
+
+</form>
