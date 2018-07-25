@@ -1,0 +1,18 @@
+<p>
+  log-form-component works!
+</p>
+<h1>Welcome to Angular</h1>
+<form (ngSubmit)="lS.addAccessItem(myForm)" #myForm="ngForm" ngNativeValidate>
+
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="person" required />
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="message" required />
+  </p>
+  <button type="submit"> addMessage </button>
+</form>
+
+<div *ngFor = "let message of messages">
+  {{message.message}} by {{message.person}} on {{message.createdAt}}
+</div>
