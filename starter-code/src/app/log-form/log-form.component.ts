@@ -17,6 +17,9 @@ export class LogFormComponent implements OnInit {
     if (!form.controls.person.errors && !form.controls.message.errors) {
       this.accessControl.addAccessItem(form.value.person, form.value.message);
       this.successMessage = "Item added.";
+      form.reset();
+
+      this.accessControl.logMessages.forEach(e => console.log(`Person: ${e["person"]} - Message: ${e["message"]}`));
     }
   }
 }
