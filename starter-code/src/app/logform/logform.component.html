@@ -1,0 +1,7 @@
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" ngNativeValidate>
+  <p>Person:</p>
+  <input type="text" name="person" [(ngModel)]="person" required minlength="3" />
+  <p>Message:</p>
+  <input type="text" name="message" [(ngModel)]="message" required minlength="6" />
+  <input type="submit">
+</form>
