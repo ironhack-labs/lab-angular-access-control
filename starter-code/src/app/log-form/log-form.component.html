@@ -1,0 +1,26 @@
+<div>{{successMessage}}</div>
+<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+  <div>
+    <label for="person">Person</label>
+    <input type="text" name="person" id="person" required minlength="6" [(ngModel)]="username" #myUserName="ngModel">
+    <div *ngIf="myUserName.errors && (myUserName.dirty||myUserName.touched)">
+      <p class="error" [hidden]="!myUserName.errors.minlength">
+        Person must be at least 6 characters long.
+      </p>
+      <p class="error" [hidden]="!myUserName.errors.required">
+        Person is required.
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <label for="message">Message</label>
+    <input type="text" name="message" id="message" required [(ngModel)]="message" #myMessage="ngModel" >
+    <div *ngIf="myMessage.errors && (myMessage.dirty||myMessage.touched)">
+      <p class="error" [hidden]="!myMessage.errors.required">
+        Message is required.
+      </p>
+    </div>
+  </div>
+  <button type="submit">Save</button>
+</form>
