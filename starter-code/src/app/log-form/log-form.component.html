@@ -1,0 +1,11 @@
+<p>
+  log-form works!
+</p>
+
+<div class="login-page">
+    <form (ngSubmit)="accessService.addAccessItem(myForm)" #myForm="ngForm" ngNativeValidate class="login-form">
+      <input type="text" name="person" [(ngModel)]="person" required/>
+      <input type="text" name="message" [(ngModel)]="message" required/>
+      <button type="submit">log in</button>
+    </form>
+</div>
