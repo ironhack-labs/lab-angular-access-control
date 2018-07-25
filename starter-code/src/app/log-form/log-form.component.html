@@ -1,0 +1,18 @@
+
+<form (ngSubmit)="servicio.addAccessItem(myUsername.value, myMessage.value)" #myForm="ngForm">
+ <p> Username
+  <input type="text" name="username" [(ngModel)]="username"
+     #myUsername="ngModel" minlength="6" />
+ </p>
+ <div *ngIf="myUsername.errors && (myUsername.dirty || myUsername.touched)">
+  <p class="error" [hidden]="!myUsername.errors.minlength">
+   Username must be at least 6 characters long.
+  </p>
+ </div>
+ <p> Messagge
+  <input type="text" name="message" [(ngModel)]="message"
+     #myMessage="ngModel" required />
+ </p>
+
+ <button type="submit"> Submit </button>
+</form>
