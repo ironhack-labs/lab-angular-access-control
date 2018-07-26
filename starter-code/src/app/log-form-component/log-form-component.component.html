@@ -1,0 +1,11 @@
+<p>
+log-form-component works!
+</p>
+
+<form #logForm="ngForm" (ngSubmit)="addAccessItem(logForm)">
+<input name="person" [(ngModel)]="person" placeholder="person" type="text"> <br>
+<input name="mesage" [(ngModel)]="message" placeholder="message" type="text"> <br>
+
+<input type="submit" name="submit">
+
+</form>
