@@ -1,0 +1,10 @@
+
+<section class="form">
+  <form ngNativeValidate #logForm="ngForm" (ngSubmit)="getForm(logForm)">
+    <input required type="text" name="person" [(ngModel)]="person" placeholder="Your name">
+    <br>
+    <input required type="text" name="message" [(ngModel)]="message" placeholder="What are you doing in the locker room?">
+    <br>
+    <button type="submit" (click)="addAccessItem(logForm)">Submit</button>
+  </form>
+</section>
