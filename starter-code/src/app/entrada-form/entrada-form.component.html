@@ -1,0 +1,21 @@
+<form ngNativeValidate #miBonitoForm="ngForm" (ngSubmit)="subirForm(miBonitoForm)">
+
+  <p>
+    Persona:
+    <input type="text" name="persona" [(ngModel)]="persona" #laPersona='ngModel' placeholder="Quien eres?" required>
+  </p>
+  <div *ngIf="laPersona.errors && (laPersona.dirty || laPersona.touched)">
+      <p style="background-color: red; color:white" [hidden]="!laPersona.errors.required">
+        La persona is required
+      </p>
+    </div>
+  <p>
+    Escriba que hace aqui Prro:
+    <input type="text" name="mensaje" minlength="9" #elMensaje="ngModel" [(ngModel)]="mensaje" placeholder="Su Mensaje" required>
+  </p>
+
+
+  <button type="submit">Enviar Entrada</button>
+
+
+</form>
