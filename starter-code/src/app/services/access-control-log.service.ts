@@ -4,29 +4,29 @@ import { create } from 'domain';
 @Injectable()
 export class AccessControlLogService {
   logMessages: Array<object> = [];
+  randomNumber: number;
 
-  constructor() { }
+  constructor() { 
+    this.randomNumber = Math.random();
+  }
 
-  addAccessItem(person, message) {
+  addAccessItem(person: string, message: string): void  {
 
     if (!person || !message) {
-      return false;
+      throw new Error('Person and message must be defined');
     }
 
     const item = {
       person:  person,
       message: message,
       createdAt: new Date
-  };
+    };
 
-  this.logMessages.push(item);
-  console.log(this.logMessages);
+    this.logMessages.push(item);
+  }
 
-  return true;
-}
-
-getAccessLog() {
-  return this.logMessages;
-}
+  getAccessLog() {
+    return this.logMessages;
+  }
 
 }

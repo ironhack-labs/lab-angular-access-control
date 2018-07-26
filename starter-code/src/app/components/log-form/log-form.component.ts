@@ -7,15 +7,13 @@ import { AccessControlLogService } from '../../services/access-control-log.servi
   styleUrls: ['./log-form.component.css']
 })
 export class LogFormComponent implements OnInit {
-  accessControlLog: AccessControlLogService;
-  person: String = '';
-  message: String = '';
-  showMessage: Boolean = false;
+  person = '';
+  message = '';
+  showMessage = false;
 
 
 
-  constructor() {
-    this.accessControlLog = new AccessControlLogService;
+  constructor(private accessControlLog: AccessControlLogService) {
    }
 
   ngOnInit() {
@@ -23,7 +21,9 @@ export class LogFormComponent implements OnInit {
 
   handleAddItem() {
     // This function is still being call when the form is invalid. WHY ? :( - Alright don't worry we fixed iiiit !!!!! ;)
-    this.showMessage = this.accessControlLog.addAccessItem(this.person, this.message);
+    this.accessControlLog.addAccessItem(this.person, this.message);
+    this.showMessage = true;
+    setTimeout(() => {this.showMessage = false; } , 1000);
   }
 
 }
