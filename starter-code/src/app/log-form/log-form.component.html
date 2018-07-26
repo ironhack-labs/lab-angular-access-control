@@ -1,0 +1,10 @@
+
+<form #logForm="ngForm" (ngSubmit)="getForm(logForm)" ngNativeValidate>
+  <input type="text" name="user" required [(ngModel)]="user">
+  <br>
+  <input type="text" name="message" required [(ngModel)]="message">
+  <br>
+  <input type="submit">
+</form>
+
+<h3 *ngIf="success">Log created!</h3>
