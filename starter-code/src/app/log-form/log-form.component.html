@@ -1,0 +1,27 @@
+<form (ngSubmit)="addToLog(myForm)" #myForm="ngForm">
+<p class="form-label">Name:</p>
+  <input type="text" name="name" placeholder="you name" [(ngModel)]="name" #myName="ngModel" required>
+  <p class="form-label">Message:</p>
+  <input type="text" name="message" placeholder="your message" [(ngModel)]="message" #myMessage="ngModel" required>
+  <br>
+  
+  <div *ngIf="(myMessage.errors && (myMessage.dirty || myMessage.touched))">
+      <p class="error alert alert-warning" [hidden]="!myMessage.errors.required">
+        Please add a message.
+      </p>
+    </div>
+
+    <div *ngIf="(myName.errors && (myName.dirty || myName.touched))">
+        <p [hidden]="!myMessage.errors.required" class="alert alert-warning">
+          Please add your name.
+        </p>
+      </div>
+   
+
+    <div *ngIf="isSuccess" class="alert alert-success">
+          Entry successfully added to access log.
+      </div>
+
+  <button class="btn btn-info">Submit</button>
+</form>
+

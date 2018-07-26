@@ -1,0 +1,25 @@
+form {
+    width: 280px;
+    margin: 50px auto;
+}
+
+.form-label{
+    margin: 20px 0 10px 0;
+    font-weight: 700;
+    text-align: center;
+}
+
+input {
+    font-family: Avenir, sans-serif;
+    padding: 10px;
+    font-size: 1em;
+    margin: 0 auto;
+    display:block;
+    width: 100%;
+}
+
+button {
+    display:block;
+    margin: 0 auto;
+    cursor: pointer;
+}
