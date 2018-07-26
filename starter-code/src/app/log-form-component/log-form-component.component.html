@@ -1,0 +1,13 @@
+<section>
+  <form ngNativeValidate #laForm="ngForm" (ngSubmit)="addAccessItem(laForm)">
+    <input name="name" [(ngModel)]="name" placeholder="Nombre" type="text" required>
+    <br>
+    <input name="message" [(ngModel)]="message" placeholder="Envíanos un mensaje" type="text" required>
+    <br>
+    <input type="text" hidden>
+    <br>
+    <input name="createdAt" [(ngModel)]="createdAt" type="submit">
+  </form>
+  <br>
+  <button (click)="getAccessLog()">Imprime</button>
+</section>
