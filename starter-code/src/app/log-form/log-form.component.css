@@ -1,0 +1,25 @@
+.container {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  padding: 50px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.ng-touched:not(form) {
+  border-left: 5px solid blue;
+}
+
+.ng-touched.ng-invalid:not(form) {
+  border-left: 5px solid red;
+}
+
+.ng-touched.ng-valid:not(form) {
+  border-left: 5px solid green;
+}
