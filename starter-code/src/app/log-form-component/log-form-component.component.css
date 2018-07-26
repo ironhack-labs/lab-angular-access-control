@@ -1,0 +1,28 @@
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div{
+  width: 450px;
+  height: 450px;
+  background-color: blueviolet;
+}
+input{
+  border-radius: 10px;
+  margin: 20px;
+  width: 400px;
+  font-size: 1em;
+}
+
+.person{
+  height: 30px;
+}
+.message{
+  height: 50px;
+  padding-top: -50px;
+}
+p{
+  color: red;
+  font-size: 2em;
+}

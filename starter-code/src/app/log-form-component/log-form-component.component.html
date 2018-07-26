@@ -1,0 +1,12 @@
+<h1>Acceso a Lockers</h1>
+<p>{{service.success}}</p>
+
+<section>
+  <div>
+    <form (ngSubmit)="service.addAccessItem(accessForm); service.getAccessLog()" ngNativeValidate #accessForm="ngForm" >
+      <input class="person" name="person" required [(ngModel)]="person" type="text" placeholder="Person"> <br>
+      <input class="message" name="message" [(ngModel)]="message" required required type="text" placeholder="Message"> <br>
+      <input type="submit">
+    </form>
+  </div> 
+</section>
