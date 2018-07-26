@@ -1,0 +1,15 @@
+<form #myForm="ngForm" class="service" (ngSubmit)="submitForm()">
+  <p>
+    <input name="person" [(ngModel)]="form.person" #person="ngModel" type="text" placeholder="Person" minlength="2" required>
+  </p>
+  <p *ngIf="person.invalid && (person.dirty || person.touched)">Person</p>
+  <p>
+    <input name="message" [(ngModel)]="form.message" #message="ngModel" type="text" placeholder="Message" minlength="6" required>
+  </p>
+  <p *ngIf="message.invalid && (message.dirty || message.touched)">Message</p>
+  <p>
+    <!-- <input type="submit" [disabled]="message.invalid || person.invalid"> -->
+        <input type="submit">
+  </p>
+</form>
+<h3 *ngIf="showSuccess">Log Created</h3>
