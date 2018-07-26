@@ -35,7 +35,7 @@ export class LogFormComponentComponent implements OnInit {
     console.log(this.person);
     console.log(this.message);
 
-    this.logMessages.push(form.value, this.createdAt = Date.now());
+    this.logMessages.push(form.value, this.createdAt = new Date());
 
   }
 
@@ -44,6 +44,7 @@ export class LogFormComponentComponent implements OnInit {
     console.log(this.createdAt)
   }
   ngOnInit() {
+    this.createdAt = new Date()
   }
 
 

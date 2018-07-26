@@ -4,9 +4,9 @@
     <br>
     <input name="message" [(ngModel)]="message" placeholder="Envíanos un mensaje" type="text" required>
     <br>
-    <input type="text" hidden>
+    <input name="createdAt" [(ngModel)]="createdAt" type="text" hidden>
     <br>
-    <input name="createdAt" [(ngModel)]="createdAt" type="submit">
+    <input  type="submit">
   </form>
   <br>
   <button (click)="getAccessLog()">Imprime</button>
