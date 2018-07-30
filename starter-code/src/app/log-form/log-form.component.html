@@ -1,0 +1,14 @@
+<form (ngSubmit)="addItemForm(myUser)" #myUser="ngForm">
+
+  <input type="text" name="person" placeholder="Name of the person" [(ngModel)]="person" required>
+
+ <input type="text" name="message" placeholder="Your message" [(ngModel)]="message" required>
+ <button type="submit">Add to Log</button>
+
+</form>
+
+<div  *ngIf="added===true">
+
+ <p>{{lastPerson}} was added to the log! </p>
+
+</div>
