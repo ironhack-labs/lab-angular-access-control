@@ -1,0 +1,27 @@
+form{
+  width: 400px;
+  background:#ececec;
+  padding:20px;
+}
+
+.form-row{
+  margin-bottom: 15px;
+}
+label{
+  display: block;
+  margin-bottom: 10px;
+}
+input, textarea{
+  width: 100%;
+  min-height: 25px;
+  border: none;
+}
+textarea{
+  height: 100px;
+}
+
+button{
+  background:#000;
+  color: #fff;
+  padding:10px;
+}
