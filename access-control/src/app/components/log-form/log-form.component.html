@@ -1,0 +1,17 @@
+<h1>Log form</h1>
+<form>
+  <label>User</label>
+  <input type="text" [(ngModel)]="person" name="person" #usernameField="ngModel" minlength="6" required>
+  
+  <label>Password</label>
+  <input type="text" [(ngModel)]="message" name="message" #messageField="ngModel" minlength="6" required>
+
+</form>
+<div *ngIf="!usernameField.errors && !messageField.errors">
+  <button (click)="logUser(person,message)">Log User</button>
+</div>
+
+{{messageInfo}}
+
+  <button (click)="console(usernameField)">TEST</button>
+
