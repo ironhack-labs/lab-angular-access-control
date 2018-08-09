@@ -1,0 +1,8 @@
+<h1 class="form-title">Enter your credentials for access</h1>
+<form #f="ngForm" class="form" (ngSubmit)="addAccessItem(f)">
+  <input type="text" name="person" ngModel placeholder="You" required>
+  <input type="text" name="message" ngModel placeholder="Whatchu Doing Here" required>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<h2 class="form-title">{{successMessage}}</h2>
