@@ -1,0 +1,32 @@
+<p>
+  log-form works!
+</p>
+
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && personField.errors}">
+    <label>Person</label>
+    <input type="text" name="person" [(ngModel)]="person" #personField="ngModel" required minlength="6" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && personField.errors">
+      <p *ngIf="personField.errors.required" class="validation">person required</p>
+      <p *ngIf="personField.errors.minlength" class="validation">person is too short</p>
+    </div>
+  </div>
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && messageField.errors}">
+    <label>Message</label>
+    <input type="text" name="message" [(ngModel)]="message" #messageField="ngModel" required [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">message required</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit">Registration</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+    <div *ngIf="form.submitted">
+      <p class="validation"> Registration successful. </p>
+    </div>
+  </div>
+</form>
