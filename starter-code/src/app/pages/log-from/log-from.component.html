@@ -1,0 +1,18 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate>
+
+  <div class="field">
+    <label>Person</label>
+    <input required  type="text" name="person" [(ngModel)]="person" #personField="ngModel"/>
+  </div>
+
+  <div class="field">
+    <label>Message</label>
+    <input required  type="text" name="message" [(ngModel)]="message" #messageField="ngModel"/>
+  </div>
+
+  <div class="field submit">
+    <button type="submit">Add log</button>
+  </div>
+</form>
+
+<p *ngIf="success">Registration successfull</p>
