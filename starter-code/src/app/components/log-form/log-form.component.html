@@ -1,0 +1,27 @@
+<h2>{{title}}</h2>
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && personField.errors || feedbackEnabled && messageField.errors}">
+    <div class="form-row">
+    <label>Name</label>
+    <input type="text" name="person" [(ngModel)]="newLog.person" #personField="ngModel" required [disabled]="processing"/>
+  </div>
+  <div class="form-row">
+    <label>Message</label>
+    <textarea name="message" [(ngModel)]="newLog.message"  #messageField="ngModel" required></textarea>
+  </div>
+    <div *ngIf="feedbackEnabled && personField.errors">
+      <p *ngIf="personField.errors.required" class="validation">Name required</p>
+    </div>
+    <div *ngIf="feedbackEnabled && messageField.errors">
+      <p *ngIf="messageField.errors.required" class="validation">Message required</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Addd Log</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+  </div>
+</form>
