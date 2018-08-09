@@ -23,11 +23,11 @@ export class LogFormComponent implements OnInit {
   submitForm(form) {
     this.error = '';
     this.feedbackEnabled = true;
-    if (form.valid) {
-      this.processing = true;
-    }
-    console.log(form);
+    // if (form.valid) {
+    //   this.processing = true;
+    // }
     this.accessService.addAccessItem(form.value.person, form.value.message);
+    this.accessService.getAccessLog();
   }
 
 

@@ -28,18 +28,10 @@ export class AccessService {
 
     this.logMessages.push(this.newLogMessages);
 
-    console.log(this.logMessages);
-    this.newLogMessages = [
-      {
-        person: '',
-        message: '',
-        createdAt: Date,
-      }
-    ];
   }
 
   getAccessLog() {
-    return this.logMessages;
+    return console.log(this.logMessages);
   }
 
 }
