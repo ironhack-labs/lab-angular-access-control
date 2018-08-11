@@ -1,0 +1,23 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+input:focus {
+  outline: none;
+}
+
+.ng-touched {
+  border-color: blue;
+}
+
+.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+.ng-touched.ng-valid {
+  border-color: green;
+}
+
+.message {
+  margin-top: 10px;
+  font-size: 20px;
+  color: blue;
+}
