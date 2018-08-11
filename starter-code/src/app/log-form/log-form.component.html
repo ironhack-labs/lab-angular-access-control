@@ -1,12 +1,17 @@
-<p>
+<!-- <p>
   log-form works!
-</p>
+</p> -->
 <form (ngSubmit)="submitForm(logForm)" #logForm="ngForm">
-  <p> Person
-    <input type="text" name="person" [(ngModel)]="newLog.person" required />
-  </p>
-  <p> Message
-    <input type="text" name="message" [(ngModel)]="newLog.message" required />
-  </p>
-  <button type="submit"> Submit </button>
+  <p> Name <input type="text" name="person" [(ngModel)]="newLog.person" #person="ngModel" required/></p>
+  <div *ngIf="person.errors && (person.dirty || person.touched)">
+    <p class="error" [hidden]="!person.errors.required"> Name is required. </p>
+  </div>
+  <p> Message <input type="text" name="message" [(ngModel)]="newLog.message" #message="ngModel" required/></p>
+  <div *ngIf="message.errors && (message.dirty || message.touched)">
+    <p class="error" [hidden]="!message.errors.required"> Message is required. </p>
+  </div>
+  <button type="submit"> Add Log </button>
+  <div *ngIf="logForm">
+    <p> Registration was successful. </p>
+  </div>
 </form>

@@ -24,7 +24,14 @@ export class AccessControlLogService {
 
   addAccessItem(newLog) {
     this.logMessages.push(newLog);
-    console.log(this.logMessages);
+
+    // console.log(this.logMessages);
+
+    this.logMessages.forEach(log)
+
+    function log (log) {
+      console.log(`Name: ${log.person} Message: ${log.message} CreatedAt: ${log.createdAt}`);
+    }
   }
 
 }

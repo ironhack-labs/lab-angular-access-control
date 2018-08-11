@@ -8,6 +8,7 @@ import { AccessControlLogService } from '../access-control-log.service'
   providers: [AccessControlLogService]
 })
 export class LogFormComponent implements OnInit {
+
   newLog = {
     person: '',
     message: '',
@@ -22,5 +23,5 @@ export class LogFormComponent implements OnInit {
     // console.log(this.newLog);
     this.theSubmit.addAccessItem(this.newLog);
 
-}
+  }
 }
