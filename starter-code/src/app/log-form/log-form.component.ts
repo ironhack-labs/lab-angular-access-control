@@ -14,14 +14,14 @@ export class LogFormComponent implements OnInit {
     message: '',
     createdAt: new Date()
   }
+  
   constructor(private theSubmit: AccessControlLogService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   submitForm(logForm) {
     // console.log(this.newLog);
     this.theSubmit.addAccessItem(this.newLog);
-
+    document.getElementById('success').innerHTML = "Registration was successful.";
   }
 }

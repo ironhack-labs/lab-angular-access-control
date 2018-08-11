@@ -2,16 +2,22 @@
   log-form works!
 </p> -->
 <form (ngSubmit)="submitForm(logForm)" #logForm="ngForm">
-  <p> Name <input type="text" name="person" [(ngModel)]="newLog.person" #person="ngModel" required/></p>
-  <div *ngIf="person.errors && (person.dirty || person.touched)">
-    <p class="error" [hidden]="!person.errors.required"> Name is required. </p>
+  <div class="form-group">
+    <label for="name"> Name </label>
+    <input type="text" name="person" [(ngModel)]="newLog.person" #person="ngModel" required class="form-control" style="width: 50%"/>
+    <div *ngIf="person.errors && (person.dirty || person.touched)">
+      <p class="alert alert-danger" [hidden]="!person.errors.required" style="width: 50%"> Name is required. </p>
+    </div>
   </div>
-  <p> Message <input type="text" name="message" [(ngModel)]="newLog.message" #message="ngModel" required/></p>
-  <div *ngIf="message.errors && (message.dirty || message.touched)">
-    <p class="error" [hidden]="!message.errors.required"> Message is required. </p>
+  <div class="form-group">
+    <label for="message"> Message </label>
+    <input type="text" name="message" [(ngModel)]="newLog.message" #message="ngModel" required class="form-control" style="width: 50%"/>
+    <div *ngIf="message.errors && (message.dirty || message.touched)">
+      <p class="alert alert-danger" [hidden]="!message.errors.required" style="width: 50%"> Message is required. </p>
+    </div>
   </div>
-  <button type="submit"> Add Log </button>
-  <div *ngIf="logForm">
-    <p> Registration was successful. </p>
+  <button type="submit" class="btn btn-success" [disabled]="!logForm.form.valid"> Add Log </button>
+  <div *ngIf="logForm.form.valid">
+    <p id="success" class="message"></p>
   </div>
 </form>
