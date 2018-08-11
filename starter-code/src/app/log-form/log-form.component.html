@@ -1,0 +1,12 @@
+<p>
+  log-form works!
+</p>
+<form (ngSubmit)="submitForm(logForm)" #logForm="ngForm">
+  <p> Person
+    <input type="text" name="person" [(ngModel)]="newLog.person" required />
+  </p>
+  <p> Message
+    <input type="text" name="message" [(ngModel)]="newLog.message" required />
+  </p>
+  <button type="submit"> Submit </button>
+</form>

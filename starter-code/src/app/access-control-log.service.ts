@@ -7,23 +7,24 @@ export class AccessControlLogService {
     {
       person: "Alex",
       message: "changing clothes",
-      createdAt: Date.now()
+      createdAt: new Date()
     },
     {
       person: "Jone",
       message: "changing clothes",
-      createdAt: Date.now()
+      createdAt: new Date()
     }
   ]
 
   constructor() { }
 
-  getAccessLog(): Array<Object> {
+  getAccessLog() {
     return this.logMessages;
   }
 
-  addAccessItem() {
-    
+  addAccessItem(newLog) {
+    this.logMessages.push(newLog);
+    console.log(this.logMessages);
   }
 
 }
