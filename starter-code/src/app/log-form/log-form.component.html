@@ -1,0 +1,12 @@
+<div class="form-wrapper">
+    <div *ngIf="showMessage" class="message"> 
+        {{messageContent}}
+      </div>
+      <div>
+        <input [(ngModel)]="new.person" type="text" placeholder="Enter your name" required>
+      </div>
+      <div>
+        <input [(ngModel)]="new.message" type="text" placeholder="Enter your message" required>
+      </div>
+      <button (click)="addAccessItem()">Add Access Item</button>
+</div>

@@ -1,0 +1,40 @@
+input[type=text]{
+    border:0;
+    outline:0;
+    transition: 300ms;
+    width: 100%;
+  border-bottom: 2px solid #dddddd;
+  background: transparent;
+  margin: 1em 0;
+  box-sizing: border-box;
+  padding: 1em 0;
+}
+input[type=text]:focus {
+  border-bottom: 2px solid #2196f3;
+}
+.message{
+    background: #9fd0f9;
+    color:#fff;
+    padding: .5em;
+    text-align: center;
+}
+.form-wrapper{
+    background: #eee;
+    width: 300px;
+    margin: auto;
+    padding: 1em;
+}
+button{
+    background: #fff;
+    width: 100%;
+    border:0;
+    padding: 1em;
+    text-align: center;
+    cursor: pointer;
+    outline:0;
+}
+button:hover{
+    transition: 300ms;
+    background: #2196f3;
+    color:#fff;
+}
