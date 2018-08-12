@@ -1,0 +1,18 @@
+<h5>Add Message</h5>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm">
+  <label>Name</label>
+  <input type="text" name="person" [(ngModel)]="person" #myPerson="ngModel" required>
+  <div *ngIf="myPerson.errors && (myPerson.dirty || myPerson.touched)">
+    <p class="error" [hidden]="!myPerson.errors.required">
+      Name is required
+    </p>
+  </div>
+  <label>Message</label>
+  <input type="text" name="message" [(ngModel)]="message">
+  <button type="submit">Send</button>
+</form>
+
+<!-- <div *ngFor="let log of logs">
+  <p> {{log.person}} | {{log.date | date : 'medium'}} </p>
+  <p>{{log.message}}</p>
+</div> -->
