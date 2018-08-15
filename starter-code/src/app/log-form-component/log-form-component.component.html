@@ -1,7 +1,7 @@
-<form (ngSubmit)="addAccessItem(myForm)" #myForm="ngForm">
+<!-- <form (ngSubmit)="addAccessItem(myName, myMessage)"> -->
   <p> Name
     <input type="text" name="person" [(ngModel)]="person"
-          #myName="ngModel" minlength="2"/>
+          #myName="ngModel" minlength="2" value='' />
   </p>
   <div *ngIf="myName.errors && (myName.dirty || myName.touched)">
     <p class="error" [hidden]="!myName.errors.minlength">
@@ -10,12 +10,15 @@
   </div>
   <p> Message
     <input type="text" name="message" [(ngModel)]="message"
-          #myMessage="ngModel" required />
+          #myMessage="ngModel" required value='' />
   </p>
   <div *ngIf="myMessage.errors && (myMessage.dirty || myMessage.touched)">
     <p class="error" [hidden]="!myMessage.errors.required">
-      Password is required
+      Message is required.
     </p>
   </div>
-    <button type="submit" [disabled]="!myForm.valid"> Send </button>
-</form>
+  <div *ngIf="display === 'true'">
+    <p>Registration Successful!</p>
+  </div>
+    <button type="button" [disabled]="!myName.valid || !myMessage.valid" (click)="addAccessItem(person, message)"> Send </button>
+<!-- </form> -->

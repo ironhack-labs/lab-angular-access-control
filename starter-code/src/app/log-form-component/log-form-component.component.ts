@@ -8,21 +8,21 @@ import { AccessControlLogService } from '../access-control-log.service';
   providers: [AccessControlLogService]
 })
 export class LogFormComponentComponent implements OnInit {
-
+  display: string;
   constructor(private theAccessControl: AccessControlLogService) { }
 
   ngOnInit() {
   }
   
-  addAccessItem(person,message){
-    this.theAccessControl.addAccessItem(person,message);
+  addAccessItem(per,msg){
+    this.theAccessControl.addAccessItem(per,msg);
+    this.display = "true";
     let allLogMessages = this.theAccessControl.getAccessLog();
     let logMessagesLength = allLogMessages.length;
-    console.log(allLogMessages);
+    // console.log(allLogMessages);
     console.log(logMessagesLength);
-    for( let i=0; i<logMessagesLength; i++){
+    for( let i=1; i<=logMessagesLength; i++){
       console.log(allLogMessages[i]);
     }
-    // console.log(this.theAccessControl.getAccessLog());
   }
 }
