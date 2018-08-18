@@ -1,0 +1,47 @@
+.container {
+  margin: 0 auto;
+  width: 10%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Addbtn {
+  display: flex;
+  margin: 10% auto 0 auto;
+  background-color: purple;
+  color: white;
+  border-radius: 10px;
+  border: solid darkviolet 2px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 4% 0 1% 5%;
+  color: purple;
+}
+
+input {
+  border: darkviolet 2px solid;
+  border-radius: 5px;
+  margin: 1%;
+}
+
+.error {
+  color: white;
+  background-color: red;
+  display: flex;
+  margin: 2% auto;
+  border-radius: 5px;
+  border: crimson solid 2px;
+}
+
+.success {
+  display: flex;
+  width: 150%;
+  margin: 4% 0 0 4%;
+  color: white;
+  background-color: lawngreen;
+  border-radius: 5px;
+  border: lightgreen solid 2px;
+}

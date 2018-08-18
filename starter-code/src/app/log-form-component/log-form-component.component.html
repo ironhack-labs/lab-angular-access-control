@@ -1,0 +1,48 @@
+<h1>Add a log</h1>
+
+<div class="container">
+
+<form (ngSubmit)="addAccessItem(person,message)" #myForm="ngForm">
+  
+  <label> person </label>
+
+  <input type="text" name="person" [(ngModel)]="person" #Person="ngModel" required>
+
+    <div *ngIf="Person.errors && (Person.dirty || Person.touched)">
+    
+      <p class="error" [hidden]="!Person.errors.required">
+        Input required.
+      </p>
+
+    </div>
+
+
+  <label> message </label>
+
+  <input type="text" name="message" [(ngModel)]="message" #Message="ngModel" required>
+
+    <div *ngIf="Message.errors && (Message.dirty || Message.touched)">
+    
+      <p class="error" [hidden]="!Message.errors.required">
+          Input required.
+      </p>
+
+    </div>
+
+  <button class="Addbtn" type="submit">Submit</button> 
+
+</form>
+
+<div *ngIf="myForm.submitted && myForm.valid">
+
+  <p class="success" [hidden]="!myForm.valid && myForm.submitted">
+    Submitted succesfully!
+  </p>
+
+</div> 
+
+</div>
+
+<div *ngFor="let log of logs">
+  {{log}}
+</div>
