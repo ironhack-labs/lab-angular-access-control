@@ -1,0 +1,51 @@
+*{
+  margin: 0% 2%;
+}
+
+.error {
+  color: white;
+  background-color: rgb(245, 124, 124);
+  display: flex;
+  margin: 5% auto 0 auto;
+  padding: 1% 2%;
+  width: auto;
+  border-radius: 5px;
+  border: 2px solid rgb(201, 18, 55);
+}
+/* .form-control.ng-touched.ng-invalid{
+  border: 2px solid red;
+} */
+.success{
+  color: black;
+  background-color: rgb(124, 245, 160);
+  display: flex;
+  margin: 5% auto 0 auto;
+  padding: 1% 2%;
+  width: auto;
+  border-radius: 5px;
+  border: 2px solid rgb(18, 201, 88);
+}
+input {
+  border: rgb(121, 123, 249) 2px solid;
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1% 2%;
+  font-size: 15px;
+
+}
+.Addbtn{
+  display: inline-flex;
+  font-size: 15px;
+  margin: 5% auto 0 2%;
+  padding: 1% 2%;
+  background-color: rgb(198, 198, 198);
+  color: rgb(31, 35, 252);
+  border-radius: 5px;
+  border: rgb(84, 86, 171) 1px solid;
+}
+.Addbtn:enabled{
+  background-color: rgb(250, 190, 121);
+  /* border: rgb(121, 123, 249) 1px solid; */
+  color: rgb(0, 0, 0);
+
+}

@@ -1,0 +1,51 @@
+<div id="form">
+  <form (ngSubmit)="addAccess(myForm)" #myForm="ngForm">
+
+      <label for="">Person: </label>
+      <input  
+        required
+        [(ngModel)]="person" 
+        name="person" 
+        #myPerson="ngModel"
+        minlength="2" 
+        type="text" 
+      >
+      <!-- (change)="log(myPerson)" -->
+      <div class="error" *ngIf="!myPerson.valid && (myPerson.dirty || myPerson.touched)">
+        <div *ngIf="myPerson.errors.required" > 
+              <!-- [hidden]="!myPerson.errors" -->
+            The [Person] field is required.
+            </div>
+        <div *ngIf="myPerson.errors.minlength">
+            Name must be at least {{myPerson.errors.minlength.requiredLength}} characters long.
+            </div>
+      </div>
+      
+      <br><br>
+
+      <label for="">Message: </label>
+      <input 
+        required 
+        [(ngModel)]="message"
+        name="message"  
+        #myMessage="ngModel"
+      >
+      <div class="error" *ngIf="!myMessage.valid && myMessage.touched">
+        <div *ngIf="myMessage.errors.required" >
+          <!-- [hidden]="!myMessage.errors.required" -->
+          The message is required!
+          </div>
+      </div> 
+      <br><br>
+
+      <button class="Addbtn" type="submit" [disabled]="!myForm.valid"> Send </button>
+
+  </form>
+    <br>
+
+  <div class="success" *ngIf="myForm.submitted && myForm.valid">
+      <!-- [hidden]="!myForm.valid && myForm.submitted" -->
+       [ Submitted succesfully ] 
+  </div>
+</div>
+

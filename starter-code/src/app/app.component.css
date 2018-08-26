@@ -1,0 +1,20 @@
+*{
+  margin: 4%;
+}
+#login{
+  width: 60%;
+  /* height: auto; */
+  border: 2px solid rgb(121, 123, 249);
+  border-radius: 5px;
+}
+#neonText {
+  color: rgb(244, 244, 244);
+  background-color: #0000008e;
+  width: 50%;
+  /* height: auto; */
+  border-radius: 30px;
+  text-align: center;
+  padding: 10px 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px rgb(121, 123, 249), 0 0 30px rgb(121, 123, 249), 0 0 40px rgb(121, 123, 249), 0 0 55px rgb(121, 123, 249), 0 0 75px rgb(121, 123, 249)
+  }
