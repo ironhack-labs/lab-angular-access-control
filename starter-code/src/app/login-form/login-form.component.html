@@ -1,0 +1,14 @@
+<div class="container">
+  <div>
+    <label for="person">Name: </label>
+    <input type="text" [(ngModel)] ="item.person" required>
+    <label for="message">Message: </label>
+    <input type="text" [(ngModel)] ="item.message" required>
+    <button (click)="addAccessItem()" (click)="toggleRegistration()"  >Add Register</button>
+    <img src="https://media.giphy.com/media/14hWUIZK0rKFS8/giphy.gif" alt="">
+  </div>
+  <div *ngIf="registration">
+    <p>Registration Successful</p>
+  </div>
+
+</div>
