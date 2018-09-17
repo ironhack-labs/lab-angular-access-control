@@ -1,0 +1,43 @@
+<form #form="ngForm">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Person</label>
+    <input type="person" 
+    required 
+    autocomplete="off"
+    #person="ngModel" 
+    name="person" 
+    [(ngModel)]="formNewPerson.person" 
+    class="form-control" 
+    minlength="5"
+    [class.is-valid]="person.valid && person.touched"
+    [class.is-invalid]="!person.valid && person.touched"
+    >
+    <div *ngIf="!person.valid && person.touched && person.dirty">
+      <p>The length must be {{person.errors.minlength.requiredLength}}</p>
+    </div>
+    <label for="exampleInputEmail1">Message</label>
+    <input type="message" 
+    required 
+    autocomplete="off"
+    #message="ngModel" 
+    name="message" 
+    [(ngModel)]="formNewPerson.message" 
+    class="form-control" 
+    minlength="10"
+    [class.is-valid]="message.valid && message.touched"
+    [class.is-invalid]="!message.valid && message.touched"
+    >
+    <div *ngIf="!message.valid && message.touched && message.dirty">
+      <p>The length must be {{message.errors.minlength.requiredLength}}</p>
+    </div>
+  </div>
+  
+  <button class="btn btn-primary btn-block" (click)="addPerson()"
+  [disabled]="!form.valid"
+  [class.btn-success]="form.valid"
+  >Submit</button>
+</form>
+
+<ul>
+  <li *ngFor="let log of getAllLogs()">{{log.person}} - {{log.message}}</li>
+</ul>
