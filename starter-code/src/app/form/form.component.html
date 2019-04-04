@@ -1,0 +1,5 @@
+<form (ngSubmit)="addPerson(myForm)" #myForm="ngForm">
+  <input type="text" name="person" [(ngModel)]="person" required>
+  <input type="text" name="message" [(ngModel)]="message" required>
+  <button type="submit">Add</button>
+</form>
