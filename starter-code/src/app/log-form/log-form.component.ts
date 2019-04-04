@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {AccesControlLogService} from '../acces-control-log.service'
 
 @Component({
@@ -7,14 +7,18 @@ import {AccesControlLogService} from '../acces-control-log.service'
   styleUrls: ['./log-form.component.css'],
   providers: [AccesControlLogService]
 })
-export class LogFormComponent implements OnInit {
-  
+export class LogFormComponent {
+  person: string;
+  message: string;
   constructor( private accesControlLogService: AccesControlLogService ) { }
 
-  ngOnInit() {
-  }
 
-  addAccesItem= (person, message) =>{
-    this.accesControlLogService.addAccesItem(person, message)
+  addPerson(form){
+  if (form.valid){
+    this.accesControlLogService.addAccesItem(form.value.person, form.value.message)
+    console.log(this.accesControlLogService.getAccessLog())
+  } else {
+    console.log('not valid')
+    }
   }
 }

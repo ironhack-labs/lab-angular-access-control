@@ -2,22 +2,17 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AccesControlLogService {
-  logMessage:Array<object> = [
-    {
-      person: String,
-      message: String,
-      createdAt: Date
-    }
-  ]
+  logMessage:Array<object> 
 
-  addAccesItem(person, message){
+  addAccesItem(person:string, message:string){
     this.logMessage.push({person, message, createdAt: new Date})
   }
 
-  getAccesLog(){
+  getAccessLog(){
     return this.logMessage
   }
 
   constructor() {  
+    this.logMessage = [];
   }
 }
