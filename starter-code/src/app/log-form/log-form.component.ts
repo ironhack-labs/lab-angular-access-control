@@ -8,13 +8,27 @@ import {AccesControlLogService} from '../acces-control-log.service'
   providers: [AccesControlLogService]
 })
 export class LogFormComponent implements OnInit {
+  person = "";
+  message = "";
+  error = undefined;
+  addSuccesful = undefined;
   
   constructor( private accesControlLogService: AccesControlLogService ) { }
 
   ngOnInit() {
   }
 
-  addAccesItem= (person, message) =>{
-    this.accesControlLogService.addAccesItem(person, message)
+  submitForm(form){
+this.error = undefined;
+this.addSuccesful = undefined;
+    if (form.value.person != "" && form.value.menssage != ""){
+      this.accesControlLogService.addAccesItem(form.value.person, form.value.message)
+      this.addSuccesful = "Log add succesfully"
+      console.log("Log from getAcces:",this.accesControlLogService.getAccesLog())
+    }
+
+    else this.error = "Campos invalidos"
+
   }
+
 }

@@ -1,5 +1,9 @@
-<form>
-  <input type="text" name="person" [(ngModule)]="person"  />
-  <input type="text" name="message" [(ngModule)]="message" />
-  <button (click)='addAccesItem(person, message)'>Submit</button>
+<form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" ngNativevalidate>
+  <input type="text" name="person" [(ngModel)]="person" placeholder="Person name" required/>
+  <input type="text" name="message" [(ngModel)]= "message" placeholder="Message" required/>
+  <button type="submit">Submit</button>
+  <span *ngIf="error">{{error}}</span>
+  <span *ngIf="addSuccesful">{{addSuccesful}}</span>
 </form>
+
+{{formData | json}}
